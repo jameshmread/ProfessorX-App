@@ -1,4 +1,7 @@
 # FrontEnd
+[![Build Status](https://travis-ci.org/jameshmread/ProfessorX-App.svg?branch=master)](https://travis-ci.org/jameshmread/ProfessorX-App)
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bbff479fe8134acc871d58230a4ec02a)](https://www.codacy.com/app/j.h.m.read/ProfessorX-App?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jameshmread/ProfessorX-App&amp;utm_campaign=Badge_Grade)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
