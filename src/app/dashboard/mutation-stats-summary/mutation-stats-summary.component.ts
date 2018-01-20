@@ -9,8 +9,8 @@ export class MutationStatsSummaryComponent implements OnInit {
 
   @Input() public mutatorResults: Array<boolean> = [];
 
-  public killedMutants;
-  public survivingMutants;
+  public killedMutants: number;
+  public survivingMutants: number;
 
   public totalMutationScore;
 
@@ -30,6 +30,6 @@ export class MutationStatsSummaryComponent implements OnInit {
   }
 
   public getKilledMutants (mutatorResults: Array<boolean>): number {
-    return mutatorResults.filter((a) => a === true).length;
+    return mutatorResults.filter((a) => a).length;
   }
 }
