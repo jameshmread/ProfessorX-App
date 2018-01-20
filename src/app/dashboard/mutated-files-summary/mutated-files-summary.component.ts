@@ -8,7 +8,6 @@ import { Component, OnInit, Input } from "@angular/core";
 export class MutatedFilesSummaryComponent implements OnInit {
 
   @Input() public sourceFiles;
-  @Input() public sourceFilePath;
 
   constructor () { }
 
