@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import * as duration from "./data.json";
+import * as data from "./outputStoreData.json";
 
 @Component({
   selector: "app-root",
@@ -17,7 +19,6 @@ export class AppComponent{
 
   // fields passed to other components
   public duration = [];
-  public sourceFilePath: string;
   public sourceFiles: Array<string> = [];
   public mutatorResults: Array<boolean> = [];
   public survivingMutants: Array<Object> = [];
@@ -25,30 +26,17 @@ export class AppComponent{
   public currentTab = "Dashboard";
 
   constructor () {
-    this.importData();
-    this.importOutputStores();
+    this.getDuration(duration);
+    this.setMutationInformation(data);
     console.log(this);
   }
 
-  public async importData () {
-      await import("./data.json").then((data) => {
-        this.getDuration(data);
-      });
-  }
-
-  public getDuration (data) {
-    this.duration.push(data["d"]);
-    this.duration.push(data["h"]);
-    this.duration.push(data["m"]);
-    this.duration.push(data["s"]);
-    this.duration.push(data["ms"]);
-  }
-
-  public async importOutputStores () {
-      await import("./outputStoreData.json").then((data) => {
-        this.outputStore = data;
-        this.setMutationInformation(this.outputStore);
-      });
+  public getDuration (timeTaken) {
+    this.duration.push(timeTaken["d"]);
+    this.duration.push(timeTaken["h"]);
+    this.duration.push(timeTaken["m"]);
+    this.duration.push(timeTaken["s"]);
+    this.duration.push(timeTaken["ms"]);
   }
 
   public getCurrentTab (event){
@@ -56,18 +44,17 @@ export class AppComponent{
   }
 
   private setMutationInformation (outputStore: Object) {
-    this.sourceFilePath = (outputStore[0]["SRC_FILE_PATH"]);
-    this.runner = (outputStore[0]["RUNNER"]);
-    this.runnerConfig = outputStore[0]["RUNNER_CONFIG"];
+    this.runner = (outputStore["RUNNER"]);
+    this.runnerConfig = outputStore["RUNNER_CONFIG"];
 
-    for (let i = 0; i < Object.keys(outputStore).length; i++) {
-      if (this.sourceFiles.indexOf(outputStore[i]["SRC_FILE"]) < 0){
-        this.sourceFiles.push(outputStore[i]["SRC_FILE"]);
+    for (let i = 0; i < Object.keys(outputStore["RESULTS_ARRAY"]).length; i++) {
+      if (this.sourceFiles.indexOf(outputStore["RESULTS_ARRAY"][i]["SRC_FILE"]) < 0){
+        this.sourceFiles.push(outputStore["RESULTS_ARRAY"][i]["SRC_FILE"]);
       }
-      if (outputStore[i]["mutantKilled"] === false){
-        this.survivingMutants.push(outputStore[i]);
+      if (!outputStore["RESULTS_ARRAY"][i]["mutantKilled"]){
+        this.survivingMutants.push(outputStore["RESULTS_ARRAY"][i]);
       }
-      this.mutatorResults.push(outputStore[i]["mutantKilled"]);
+      this.mutatorResults.push(outputStore["RESULTS_ARRAY"][i]["mutantKilled"]);
     }
     console.log(this.survivingMutants);
   }
