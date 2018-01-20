@@ -1,0 +1,14 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+- '9'
+
+before_script:
+  - npm install -g angular-cli
+  - npm install -g karma
+  - npm install
+  - ng build
+  - ng lint
+
+script: karma start karma.conf.js --single-run
