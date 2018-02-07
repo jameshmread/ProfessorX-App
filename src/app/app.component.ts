@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import * as duration from "./data.json";
 import * as data from "./outputStoreData.json";
+import { GatherData } from "../inputOrganiser/GatherData";
 
 @Component({
   selector: "app-root",
@@ -26,8 +27,15 @@ export class AppComponent{
   public currentTab = "Dashboard";
 
   constructor () {
+    const resultsArray = new GatherData().getResultsArray();
     this.getDuration(duration);
-    this.setMutationInformation(data);
+    this.sourceFiles = [...resultsArray].map((result) => result.srcFileName);
+    this.mutatorResults = [...resultsArray].map((result) => result.mutantKilled);
+    this.survivingMutants = [...resultsArray].map((result) => {
+      if (result.mutantKilled) {
+        return result;
+      }
+    });
     console.log(this);
   }
 
@@ -41,21 +49,5 @@ export class AppComponent{
 
   public getCurrentTab (event){
     this.currentTab = event;
-  }
-
-  private setMutationInformation (outputStore: Object) {
-    this.runner = (outputStore["RUNNER"]);
-    this.runnerConfig = outputStore["RUNNER_CONFIG"];
-
-    for (let i = 0; i < Object.keys(outputStore["RESULTS_ARRAY"]).length; i++) {
-      if (this.sourceFiles.indexOf(outputStore["RESULTS_ARRAY"][i]["SRC_FILE"]) < 0){
-        this.sourceFiles.push(outputStore["RESULTS_ARRAY"][i]["SRC_FILE"]);
-      }
-      if (!outputStore["RESULTS_ARRAY"][i]["mutantKilled"]){
-        this.survivingMutants.push(outputStore["RESULTS_ARRAY"][i]);
-      }
-      this.mutatorResults.push(outputStore["RESULTS_ARRAY"][i]["mutantKilled"]);
-    }
-    console.log(this.survivingMutants);
   }
 }
