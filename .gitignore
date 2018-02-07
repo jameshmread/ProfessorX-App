@@ -1,8 +1,9 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # project
-/src/app/data.json
-/src/app/outputStoreData.json
+src/app/data.json
+src/app/outputStoreData.json
+*Data.json
 
 # compiled output
 /dist
