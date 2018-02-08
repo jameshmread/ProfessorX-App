@@ -1,7 +1,7 @@
 import { InputOrganiser } from "./InputOrganiser";
 import { IRunnerConfig } from "../../interfaces/IRunnerConfig";
 import { IMutationResult } from "../../interfaces/IMutationResult";
-import * as data from "../app/newData.json";
+import * as data from "../app/devData.json";
 
 export class GatherData extends InputOrganiser {
       constructor (){
@@ -40,4 +40,12 @@ export class GatherData extends InputOrganiser {
             }
             return result;
       }
+
+      public getDuration (): Array<number> {
+            const duration = [];
+            Object.keys(this.inputData[0]["duration"]).forEach((timeDivision) => {
+              duration.push(this.inputData[0]["duration"][timeDivision]);
+            });
+            return duration;
+          }
 }

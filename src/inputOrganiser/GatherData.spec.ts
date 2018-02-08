@@ -76,4 +76,15 @@ describe("AppComponent", () => {
             const actual: IMutationResult = gatherData.fillNonApplicableFields(mutationResultSuccess);
             expect(actual.mutationAttemptFailure).toBeDefined();
       });
+
+      it("should return an array of length 5", () => {
+            const actual = gatherData.getDuration();
+            expect(actual.length).toEqual(5);
+      });
+
+      it("should return 0d 0h 0m 1s 359ms", () => {
+            const actual = gatherData.getDuration();
+            const expected = [0, 0, 0, 1, 359];
+            expect(actual).toEqual(expected);
+      });
 });
