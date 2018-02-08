@@ -16,9 +16,10 @@ export class GatherData extends InputOrganiser {
       public getResultsArray (): Array<IMutationResult> {
             const resultsArray = new Array<IMutationResult>();
             this.inputData[1].forEach((result) => {
+                  result = this.fillNonApplicableFields(result);
                   resultsArray.push({
                   srcFilePath: result["SRC_FILE_PATH"],
-                  srcFileName: result["srcFileName"],
+                  srcFileName: result["SRC_FILE"],
                   testFilePath: result["testFilePath"],
                   lineNumber: result["lineNumber"],
                   origionalCode: result["origionalCode"],
@@ -30,5 +31,13 @@ export class GatherData extends InputOrganiser {
                   });
             });
             return resultsArray;
+      }
+      public fillNonApplicableFields (result: IMutationResult) {
+            for (const element in result) {
+                  if (result[element] === void 0) {
+                        result[element] = "N/A";
+                  }
+            }
+            return result;
       }
 }

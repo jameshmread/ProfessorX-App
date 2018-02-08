@@ -8,22 +8,72 @@ import { IMutationResult } from "../../interfaces/IMutationResult";
 
 describe("AppComponent", () => {
       let gatherData;
+      const mutationResultSuccess: IMutationResult = {
+            srcFilePath: "./testProject/src/",
+            srcFileName: "HelloWorld.ts",
+            testFilePath: "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
+            lineNumber: 2,
+            origionalCode: "return a + b;",
+            mutatedCode: "return a / b;",
+            numPassedTests: 3,
+            numFailedTests: 1,
+            mutantKilled: true,
+            mutationAttemptFailure: undefined
+      };
+
+      const mutationResultFail: IMutationResult = {
+            srcFilePath: "./testProject/src/",
+            srcFileName: "HelloWorld.ts",
+            testFilePath: undefined,
+            lineNumber: 4,
+            origionalCode: "return a + b;",
+            mutatedCode: "return a / b;",
+            numPassedTests: undefined,
+            numFailedTests: undefined,
+            mutantKilled: undefined,
+            mutationAttemptFailure: {}
+      };
       beforeEach(() => {
             gatherData = new GatherData();
       });
 
       it("should not have a null runner name element", () => {
             const actual: IRunnerConfig = gatherData.getRunnerConfig(newData);
-            expect(actual.runnerName).not.toBeNull();
+            expect(actual.runnerName).not.toBeUndefined();
       });
 
       it("should not have a null runner config element", () => {
             const actual: IRunnerConfig = gatherData.getRunnerConfig(newData);
-            expect(actual.runnerConfig).not.toBeNull();
+            expect(actual.runnerConfig).not.toBeUndefined();
       });
 
       it("should not have a null linenumber element", () => {
             const actual: Array<IMutationResult> = gatherData.getResultsArray();
-            expect(actual[0].lineNumber).not.toBeNull();
+            expect(actual[0].lineNumber).not.toBeUndefined();
+      });
+
+      it("should not have a null srcfile path element", () => {
+            const actual: Array<IMutationResult> = gatherData.getResultsArray();
+            expect(actual[0].srcFileName).not.toBeUndefined();
+      });
+
+      it("file name should not be changed with successful mutation", () => {
+            const actual: IMutationResult = gatherData.fillNonApplicableFields(mutationResultSuccess);
+            expect(actual.srcFileName).toEqual("HelloWorld.ts");
+      });
+
+      it("file name should not be changed with unsuccessful mutation", () => {
+            const actual: IMutationResult = gatherData.fillNonApplicableFields(mutationResultFail);
+            expect(actual.srcFileName).toEqual("HelloWorld.ts");
+      });
+
+      it("mutant killed should be defined with unsuccessful mutation", () => {
+            const actual: IMutationResult = gatherData.fillNonApplicableFields(mutationResultFail);
+            expect(actual.mutantKilled).toBeDefined();
+      });
+
+      it("mutant attempt failure should be defined with successful mutation", () => {
+            const actual: IMutationResult = gatherData.fillNonApplicableFields(mutationResultSuccess);
+            expect(actual.mutationAttemptFailure).toBeDefined();
       });
 });
