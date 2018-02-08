@@ -1,0 +1,75 @@
+[
+      {
+            "runner": "mocha",
+            "config": {
+                  "reporter": "dot"
+            },
+            "duration": {
+                  "d": 0,
+                  "h": 0,
+                  "m": 0,
+                  "s": 1,
+                  "ms": 359
+            }
+      },
+      [
+            {
+                  "SRC_FILE_PATH": "./testProject/src/",
+                  "SRC_FILE": "HelloWorld.ts",
+                  "mutationAttemptFailure": {
+                        "attemptedMutation": "37 => -",
+                        "nodeToBeMutated": {
+                              "syntaxType": 37,
+                              "positions": {
+                                    "pos": 91,
+                                    "end": 93
+                              },
+                              "parentFileName": "HelloWorld.ts"
+                        }
+                  },
+                  "lineNumber": 2,
+                  "origionalCode": "return a + b;",
+                  "mutatedCode": "return a + b;"
+            },
+            {
+                  "SRC_FILE_PATH": "./testProject/src/",
+                  "SRC_FILE": "FileTwo.ts",
+                  "mutationAttemptFailure": {
+                        "attemptedMutation": "29 => -",
+                        "nodeToBeMutated": {
+                              "syntaxType": 29,
+                              "positions": {
+                                    "pos": 193,
+                                    "end": 195
+                              },
+                              "parentFileName": "FileTwo.ts"
+                        }
+                  },
+                  "lineNumber": 4,
+                  "origionalCode": "if (i % 2 === 0 && 1 > 0){",
+                  "mutatedCode": "if (i % 2 === 0 && 1 > 0){"
+            },
+            {
+                  "SRC_FILE_PATH": "./testProject/src/",
+                  "SRC_FILE": "HelloWorld.ts",
+                  "testFilePath": "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
+                  "lineNumber": 2,
+                  "origionalCode": "return a + b;",
+                  "mutatedCode": "return a / b;",
+                  "numberOfPassedTests": 3,
+                  "numberOfFailedTests": 1,
+                  "mutantKilled": true
+            },
+            {
+                  "SRC_FILE_PATH": "./testProject/src/",
+                  "SRC_FILE": "HelloWorld.ts",
+                  "testFilePath": "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
+                  "lineNumber": 8,
+                  "origionalCode": "return a + b;",
+                  "mutatedCode": "return a / b;",
+                  "numberOfPassedTests": 4,
+                  "numberOfFailedTests": 0,
+                  "mutantKilled": false
+            }
+      ]
+]
