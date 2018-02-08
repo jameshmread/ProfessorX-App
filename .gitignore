@@ -2,8 +2,6 @@
 
 # project
 src/app/data.json
-src/app/outputStoreData.json
-*Data.json
 
 # compiled output
 /dist
