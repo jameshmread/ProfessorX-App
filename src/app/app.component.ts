@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
-import * as duration from "./data.json";
 import { GatherData } from "../inputOrganiser/GatherData";
-import { Output } from "@angular/core/src/metadata/directives";
 
 @Component({
   selector: "app-root",
@@ -18,8 +16,9 @@ export class AppComponent{
   public currentTab = "Dashboard";
 
   constructor () {
+    const dataGatherer = new GatherData();
     const resultsArray = new GatherData().getResultsArray();
-    this.getDuration(duration);
+    this.duration = dataGatherer.getDuration();
     this.sourceFiles = resultsArray.map((result) => result.srcFileName);
     this.mutatorResults = resultsArray.map((result) => result.mutantKilled);
     this.survivingMutants = resultsArray.map((result) => {
@@ -28,12 +27,6 @@ export class AppComponent{
       }
     });
     console.log(this);
-  }
-
-  public getDuration (timeTaken) {
-    Object.keys(timeTaken).forEach((timeDivision) => {
-      this.duration.push(timeTaken[timeDivision]);
-    });
   }
 
   public getCurrentTab (event){
