@@ -4,4 +4,4 @@ languages:
 - javascript
 
 exclude:
-- /src/testUtilities/
+- /src/testUtilities/stubs/*
