@@ -4,4 +4,7 @@ languages:
 - javascript
 
 exclude:
-- /src/testUtilities/*
+- /src/testUtilities/
+
+include:
+- /src/
