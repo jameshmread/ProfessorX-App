@@ -44,7 +44,6 @@ describe("MutationResultsService", () => {
       StubMutationResult.mutationResultSuccessKilled,
       StubMutationResult.mutationResultSuccessSurvived,
       StubMutationResult.mutationResultFail]);
-    console.log(service.getAllSurvivingMutants());
     expect(service.getAllSurvivingMutants().length).toEqual(1);
   }));
 
@@ -53,8 +52,43 @@ describe("MutationResultsService", () => {
     service.setAllMutationResults([
       StubMutationResult.mutationResultSuccessSurvived,
       StubMutationResult.mutationResultSuccessSurvived]);
-    console.log(service.getAllSurvivingMutants());
     expect(service.getAllSurvivingMutants().length).toEqual(2);
+  }));
+
+  it("should return a surviving mutant result object when given one",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessKilled,
+      StubMutationResult.mutationResultSuccessSurvived,
+      StubMutationResult.mutationResultFail]);
+    expect(service.getAllSurvivingMutants()[0]).toEqual(StubMutationResult.mutationResultSuccessSurvived);
+  }));
+
+  it("should return 0 when given no failed mutations",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessSurvived,
+      StubMutationResult.mutationResultSuccessSurvived]);
+    expect(service.getFailedMutationAttempts().length).toEqual(0);
+  }));
+
+  it("should return 1 when given a failed mutation",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessSurvived,
+      StubMutationResult.mutationResultFail,
+      StubMutationResult.mutationResultSuccessSurvived]);
+    console.log(service.getFailedMutationAttempts());
+    expect(service.getFailedMutationAttempts().length).toEqual(1);
+  }));
+
+  it("should return a failed mutation result when given one",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessSurvived,
+      StubMutationResult.mutationResultFail,
+      StubMutationResult.mutationResultSuccessSurvived]);
+    expect(service.getFailedMutationAttempts()[0]).toEqual(StubMutationResult.mutationResultFail);
   }));
 
 

@@ -30,4 +30,9 @@ export class MutationResultsService {
   public getAllSurvivingMutants (): Array<IMutationResult> {
     return this.mutationResults.filter((result) => result.mutantKilled === false);
   }
+
+  public getFailedMutationAttempts (): Array<IMutationResult> {
+    return this.mutationResults.filter((result) =>
+      result.mutationAttemptFailure === Object(result.mutationAttemptFailure));
+  }
 }
