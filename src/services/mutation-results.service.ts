@@ -28,6 +28,6 @@ export class MutationResultsService {
   }
 
   public getAllSurvivingMutants (): Array<IMutationResult> {
-    return this.mutationResults.filter((result) => !result.mutantKilled);
+    return this.mutationResults.filter((result) => result.mutantKilled === false);
   }
 }
