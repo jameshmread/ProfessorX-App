@@ -35,4 +35,11 @@ export class MutationResultsService {
     return this.mutationResults.filter((result) =>
       result.mutationAttemptFailure === Object(result.mutationAttemptFailure));
   }
+
+  public getUniqueMutatedTestFiles (): Array<string> {
+    return this.mutationResults
+    .filter((result) => result.testFilePath.length > 3)
+    .filter((result, i, array) => array.indexOf(result) === i)
+    .map((result) => result.testFilePath);
+  }
 }

@@ -78,7 +78,6 @@ describe("MutationResultsService", () => {
       StubMutationResult.mutationResultSuccessSurvived,
       StubMutationResult.mutationResultFail,
       StubMutationResult.mutationResultSuccessSurvived]);
-    console.log(service.getFailedMutationAttempts());
     expect(service.getFailedMutationAttempts().length).toEqual(1);
   }));
 
@@ -91,5 +90,42 @@ describe("MutationResultsService", () => {
     expect(service.getFailedMutationAttempts()[0]).toEqual(StubMutationResult.mutationResultFail);
   }));
 
+  it("should return 2 when given 2 successful mutation results",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessSurvived,
+      StubMutationResult.mutationResultSuccessKilled]);
+    expect(service.getUniqueMutatedTestFiles().length).toEqual(2);
+  }));
+
+  it("should return 2 when given 2 successful mutation results and a fail",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessSurvived,
+      StubMutationResult.mutationResultFail,
+      StubMutationResult.mutationResultSuccessKilled]);
+    expect(service.getUniqueMutatedTestFiles().length).toEqual(2);
+  }));
+
+  it("should return a test file path when given 1 successful mutation result",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([StubMutationResult.mutationResultSuccessKilled]);
+    expect(service.getUniqueMutatedTestFiles()[0]).toEqual(StubMutationResult.mutationResultSuccessKilled.testFilePath);
+  }));
+
+  it("should return a list of test file paths with no duplicates",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessKilled,
+      StubMutationResult.mutationResultSuccessKilled,
+      StubMutationResult.mutationResultSuccessSurvived,
+      StubMutationResult.mutationResultFail]
+    );
+    const expected = [
+      StubMutationResult.mutationResultSuccessKilled.testFilePath,
+      StubMutationResult.mutationResultSuccessSurvived.testFilePath
+    ];
+    expect(service.getUniqueMutatedTestFiles()).toEqual(expected);
+  }));
 
 });
