@@ -22,7 +22,7 @@ export class StubMutationResult {
             mutationAttemptFailure: "N/A",
             numFailedTests: 0,
             numPassedTests: 4,
-            srcFileName: "StubFileName.ts",
+            srcFileName: "StubFileNamesuccess.ts",
             srcFilePath: "Stub/FilePath/",
             testFilePath: "Stub/Test/FilePath/"
       };
