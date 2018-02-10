@@ -42,4 +42,10 @@ export class MutationResultsService {
     .filter((result, i, array) => array.indexOf(result) === i)
     .map((result) => result.testFilePath);
   }
+
+  public getUniqueMutatedSourceFileNames (): Array<string> {
+    return this.mutationResults
+    .filter((result, i, array) => array.indexOf(result) === i)
+    .map((result) => result.srcFileName);
+  }
 }

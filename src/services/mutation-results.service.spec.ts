@@ -128,4 +128,29 @@ describe("MutationResultsService", () => {
     expect(service.getUniqueMutatedTestFiles()).toEqual(expected);
   }));
 
+  it("should get a list of source files when there are no duplicates",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessKilled,
+      StubMutationResult.mutationResultSuccessKilled,
+      StubMutationResult.mutationResultSuccessSurvived,
+      StubMutationResult.mutationResultFail]
+    );
+    const expected = [
+      StubMutationResult.mutationResultSuccessKilled.srcFileName,
+      StubMutationResult.mutationResultSuccessSurvived.srcFileName,
+      StubMutationResult.mutationResultFail.srcFileName
+    ];
+    expect(service.getUniqueMutatedSourceFileNames()).toEqual(expected);
+  }));
+
+  it("should get a unique list of source files when there are 2 duplicates",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessKilled,
+      StubMutationResult.mutationResultSuccessKilled]);
+    const expected = [StubMutationResult.mutationResultSuccessKilled.srcFileName];
+    expect(service.getUniqueMutatedSourceFileNames()).toEqual(expected);
+  }));
+
 });
