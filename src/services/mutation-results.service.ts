@@ -48,4 +48,9 @@ export class MutationResultsService {
     .filter((result, i, array) => array.indexOf(result) === i)
     .map((result) => result.srcFileName);
   }
+
+  public getSurvivorsByFilter (attributeToFilterBy: string, value: any) {
+    return this.getAllSurvivingMutants()
+    .filter((result) => result[attributeToFilterBy] === value);
+  }
 }
