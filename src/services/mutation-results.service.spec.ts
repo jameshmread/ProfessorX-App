@@ -33,6 +33,16 @@ describe("MutationResultsService", () => {
     expect(service.getAllSurvivingMutants()).not.toBeNull();
   }));
 
+  it("should return 2 when given 2 killed mutants",
+  inject([MutationResultsService], (service: MutationResultsService) => {
+    service.setAllMutationResults([
+      StubMutationResult.mutationResultSuccessKilled,
+      StubMutationResult.mutationResultSuccessKilled1,
+      StubMutationResult.mutationResultSuccessSurvived,
+      StubMutationResult.mutationResultFail]);
+    expect(service.getAllKilledMutants().length).toEqual(2);
+  }));
+
   it("should return 0 when no failed results occur",
   inject([MutationResultsService], (service: MutationResultsService) => {
     expect(service.getAllSurvivingMutants().length).toEqual(0);
