@@ -8,17 +8,17 @@ import { MutationResultsService } from "../../../services/mutation-results.servi
 })
 export class ProgressBarComponent implements OnInit {
 
-  private mutantsSurvived: number;
-  private mutantsKilled: number;
-  private failedMutations: number;
-  private totalNumber: number;
+  public mutantsSurvived: number;
+  public mutantsKilled: number;
+  public failedMutations: number;
+  private totalNumberOfReaults: number;
   constructor (private mResults: MutationResultsService) { }
 
   public ngOnInit () {
-    this.totalNumber = this.mResults.getAllMutationResults().length;
-    this.mutantsSurvived = (this.mResults.getAllSurvivingMutants().length / this.totalNumber) * 100;
-    this.mutantsKilled = (this.mResults.getAllKilledMutants().length / this.totalNumber ) * 100;
-    this.failedMutations = (this.mResults.getFailedMutationAttempts().length / this.totalNumber ) * 100;
+    this.totalNumberOfReaults = this.mResults.getAllMutationResults().length;
+    this.mutantsSurvived = (this.mResults.getAllSurvivingMutants().length / this.totalNumberOfReaults) * 100;
+    this.mutantsKilled = (this.mResults.getAllKilledMutants().length / this.totalNumberOfReaults ) * 100;
+    this.failedMutations = (this.mResults.getFailedMutationAttempts().length / this.totalNumberOfReaults ) * 100;
   }
 
 }

@@ -1,55 +1,51 @@
+import { mock } from "ts-mockito";
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { MutationStatsSummaryComponent } from "./mutation-stats-summary.component";
+import { MutationResultsService } from "../../../services/mutation-results.service";
+import { StubMutationResult } from "../../../testUtilities/stubs/StubMutationResult";
 
 describe("MutationStatsSummaryComponent", () => {
-  let component: MutationStatsSummaryComponent;
-  let fixture: ComponentFixture<MutationStatsSummaryComponent>;
   let mssc: MutationStatsSummaryComponent;
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MutationStatsSummaryComponent ]
-    })
-    .compileComponents();
-  }));
+  const mockMResultService = mock(MutationResultsService);
 
   beforeEach(() => {
-    mssc = new MutationStatsSummaryComponent();
-    fixture = TestBed.createComponent(MutationStatsSummaryComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    mockMResultService.setAllMutationResults(StubMutationResult.allResults);
+    mssc = new MutationStatsSummaryComponent(mockMResultService);
   });
 
   it("should create", () => {
-    expect(component).toBeTruthy();
+    expect(mssc).toBeTruthy();
   });
 
-  it("totalmScore should = 100 given 1 killed and 0 surviving", () => {
+  it("should = 100 given 1 killed and 0 surviving", () => {
     mssc.killedMutants = 1;
     mssc.survivingMutants = 0;
-    mssc.setMutationScore();
-    expect(mssc.totalMutationScore).toEqual(100);
+    expect(mssc.setMutationScore()).toEqual(100);
   });
 
-  it("totalmScore should = 0 given 0 killed and 1 surviving", () => {
+  it("should = 0 given 0 killed and 1 surviving", () => {
     mssc.killedMutants = 0;
     mssc.survivingMutants = 1;
-    mssc.setMutationScore();
-    expect(mssc.totalMutationScore).toEqual(0);
+    expect(mssc.setMutationScore()).toEqual(0);
   });
 
-  it("totalmScore should = 50 given 1 killed and 1 surviving", () => {
+  it("should = 50 given 1 killed and 1 surviving", () => {
     mssc.killedMutants = 1;
     mssc.survivingMutants = 1;
-    mssc.setMutationScore();
-    expect(mssc.totalMutationScore).toEqual(50);
+    expect(mssc.setMutationScore()).toEqual(50);
   });
 
-  it("totalmScore should = 50 given 1 killed and 1 surviving", () => {
+  it("should = 50 given 1 killed and 1 surviving", () => {
     mssc.killedMutants = 1;
     mssc.survivingMutants = 1;
-    mssc.setMutationScore();
-    expect(mssc.totalMutationScore).toEqual(50);
+    expect(mssc.setMutationScore()).toEqual(50);
+  });
+
+  it("should return 66.6 given 2 killed and 1 surviving", () => {
+    mssc.killedMutants = 2;
+    mssc.survivingMutants = 1;
+    expect(mssc.setMutationScore()).toEqual(66.67);
   });
 
   it("should return 1 when given [true, false]", () => {
