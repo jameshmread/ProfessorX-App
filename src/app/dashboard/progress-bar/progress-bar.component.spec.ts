@@ -1,25 +1,17 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-
+import { MutationResultsService } from "../../../services/mutation-results.service";
+import * as mockito from "ts-mockito";
 import { ProgressBarComponent } from "./progress-bar.component";
 
 describe("ProgressBarComponent", () => {
   let component: ProgressBarComponent;
-  let fixture: ComponentFixture<ProgressBarComponent>;
+  const mockResultsService = mockito.mock(MutationResultsService);
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ProgressBarComponent ]
-    })
-    .compileComponents();
-  }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProgressBarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new ProgressBarComponent(mockResultsService);
   });
 
-  it("should create", () => {
-    expect(component).toBeTruthy();
+  it("should be created", () => {
+    expect(component).toBeDefined();
   });
 });
