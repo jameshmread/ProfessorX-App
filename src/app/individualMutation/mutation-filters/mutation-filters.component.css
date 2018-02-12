@@ -2,6 +2,19 @@
       padding-left: 0.1px;
 }
 
-.panel-head-padding{
+.content-padding {
+      padding: 10px;
+}
+
+.panel-head-padding {
       padding-bottom: 25px;
-    }
+}
+
+.select-picker {
+      padding: 10px;
+      padding-right: 100px;
+      color: black;
+      background-color: whitesmoke;
+      border-radius: 15px;
+      border-width: 3px;
+}

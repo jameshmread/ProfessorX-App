@@ -8,10 +8,7 @@ describe("MutationFiltersComponent", () => {
             mfc = new MutationFiltersComponent();
       });
 
-      it("source files dropdown length should be 2 with 1 src file", () => {
-            mfc.srcFiles = ["length1"];
-            expect(mfc.sourceFilesDropDown.length).toEqual(1);
-            mfc.addSourceFileDropdownOptions();
-            expect(mfc.sourceFilesDropDown.length).toEqual(2);
+      it("should be created", () => {
+            expect(mfc).toBeTruthy();
       });
 });
