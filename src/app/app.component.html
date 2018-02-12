@@ -1,5 +1,5 @@
 <app-navbar (currentTab)="getCurrentTab($event)"></app-navbar>
-
+<div style="padding-top: 75px"></div>
 <div *ngIf="currentTab == 'Dashboard'">
   <div class="container">
     <h1 class="display-1 duration">Time Taken</h1>
@@ -21,7 +21,7 @@
 
 <div *ngIf="currentTab == 'In-Depth View'">
 
-  <app-mutation-filters [srcFiles]="sourceFiles"></app-mutation-filters>
+  <app-mutation-filters></app-mutation-filters>
   
   <app-code-change-display></app-code-change-display>
   
