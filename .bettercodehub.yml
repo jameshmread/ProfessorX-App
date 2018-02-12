@@ -1,8 +1,0 @@
-languages:
-- typescript
-
-production:
-  exclude:
-    - /src/app/app.module.ts
-    - /src/polyfills.ts
-    - /src/testUtilities/.*
