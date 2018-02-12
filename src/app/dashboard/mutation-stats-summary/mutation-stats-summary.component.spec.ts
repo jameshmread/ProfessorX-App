@@ -47,20 +47,4 @@ describe("MutationStatsSummaryComponent", () => {
     mssc.survivingMutants = 1;
     expect(mssc.setMutationScore()).toEqual(66.67);
   });
-
-  it("should return 1 when given [true, false]", () => {
-    expect(mssc.getKilledMutants([true, false])).toEqual(1);
-  });
-
-  it("should return 2 when given [true, true]", () => {
-    expect(mssc.getKilledMutants([true, true])).toEqual(2);
-  });
-
-  it("should return 0 when given [false, false]", () => {
-    expect(mssc.getKilledMutants([false, false])).toEqual(0);
-  });
-
-  it("should return 2 when given [false, true, true]", () => {
-    expect(mssc.getKilledMutants([false, true, true])).toEqual(2);
-  });
 });

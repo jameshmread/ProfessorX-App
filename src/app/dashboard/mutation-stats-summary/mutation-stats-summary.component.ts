@@ -24,8 +24,4 @@ export class MutationStatsSummaryComponent implements OnInit {
     const totalSuccessfulMutations = this.killedMutants + this.survivingMutants;
     return Number((this.killedMutants / totalSuccessfulMutations * 100).toFixed(2));
   }
-
-  public getKilledMutants (mutatorResults: Array<boolean>): number {
-    return mutatorResults.filter((a) => a).length;
-  }
 }
