@@ -40,18 +40,18 @@ export class MutationResultsService {
       result.mutationAttemptFailure === Object(result.mutationAttemptFailure));
   }
 
-  public getUniqueMutatedTestFiles (): Array<string> {
-    return this.mutationResults
-    .filter((result) => result.testFilePath.length > 3)
-    .filter((result, i, array) => array.indexOf(result) === i)
-    .map((result) => result.testFilePath);
-  }
+  // public getUniqueMutatedTestFiles (): Array<string> {
+  //   return this.mutationResults
+  //   .filter((result) => result.testFilePath.length > 3)
+  //   .filter((result, i, array) => array.indexOf(result) === i)
+  //   .map((result) => result.testFilePath);
+  // }
 
-  public getUniqueMutatedSourceFileNames (): Array<string> {
-    return this.mutationResults
-    .filter((result, i, array) => array.indexOf(result) === i)
-    .map((result) => result.srcFileName);
-  }
+  // public getUniqueMutatedSourceFileNames (): Array<string> {
+  //   return this.mutationResults
+  //   .filter((result, i, array) => array.indexOf(result) === i)
+  //   .map((result) => result.srcFileName);
+  // }
 
   public getSurvivorsByFilter (attributeToFilterBy: string, value: any) {
     return this.getAllSurvivingMutants()

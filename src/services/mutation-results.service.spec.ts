@@ -100,69 +100,6 @@ describe("MutationResultsService", () => {
     expect(service.getFailedMutationAttempts()[0]).toEqual(StubMutationResult.mutationResultFail);
   }));
 
-  it("should return 2 when given 2 successful mutation results",
-  inject([MutationResultsService], (service: MutationResultsService) => {
-    service.setAllMutationResults([
-      StubMutationResult.mutationResultSuccessSurvived,
-      StubMutationResult.mutationResultSuccessKilled]);
-    expect(service.getUniqueMutatedTestFiles().length).toEqual(2);
-  }));
-
-  it("should return 2 when given 2 successful mutation results and a fail",
-  inject([MutationResultsService], (service: MutationResultsService) => {
-    service.setAllMutationResults([
-      StubMutationResult.mutationResultSuccessSurvived,
-      StubMutationResult.mutationResultFail,
-      StubMutationResult.mutationResultSuccessKilled]);
-    expect(service.getUniqueMutatedTestFiles().length).toEqual(2);
-  }));
-
-  it("should return a test file path when given 1 successful mutation result",
-  inject([MutationResultsService], (service: MutationResultsService) => {
-    service.setAllMutationResults([StubMutationResult.mutationResultSuccessKilled]);
-    expect(service.getUniqueMutatedTestFiles()[0]).toEqual(StubMutationResult.mutationResultSuccessKilled.testFilePath);
-  }));
-
-  it("should return a list of test file paths with no duplicates",
-  inject([MutationResultsService], (service: MutationResultsService) => {
-    service.setAllMutationResults([
-      StubMutationResult.mutationResultSuccessKilled,
-      StubMutationResult.mutationResultSuccessKilled,
-      StubMutationResult.mutationResultSuccessSurvived,
-      StubMutationResult.mutationResultFail]
-    );
-    const expected = [
-      StubMutationResult.mutationResultSuccessKilled.testFilePath,
-      StubMutationResult.mutationResultSuccessSurvived.testFilePath
-    ];
-    expect(service.getUniqueMutatedTestFiles()).toEqual(expected);
-  }));
-
-  it("should get a list of source files when there are no duplicates",
-  inject([MutationResultsService], (service: MutationResultsService) => {
-    service.setAllMutationResults([
-      StubMutationResult.mutationResultSuccessKilled,
-      StubMutationResult.mutationResultSuccessKilled,
-      StubMutationResult.mutationResultSuccessSurvived,
-      StubMutationResult.mutationResultFail]
-    );
-    const expected = [
-      StubMutationResult.mutationResultSuccessKilled.srcFileName,
-      StubMutationResult.mutationResultSuccessSurvived.srcFileName,
-      StubMutationResult.mutationResultFail.srcFileName
-    ];
-    expect(service.getUniqueMutatedSourceFileNames()).toEqual(expected);
-  }));
-
-  it("should get a unique list of source files when there are 2 duplicates",
-  inject([MutationResultsService], (service: MutationResultsService) => {
-    service.setAllMutationResults([
-      StubMutationResult.mutationResultSuccessKilled,
-      StubMutationResult.mutationResultSuccessKilled]);
-    const expected = [StubMutationResult.mutationResultSuccessKilled.srcFileName];
-    expect(service.getUniqueMutatedSourceFileNames()).toEqual(expected);
-  }));
-
   it("should return survivors from a particular line number 3",
   inject([MutationResultsService], (service: MutationResultsService) => {
     service.setAllMutationResults(StubMutationResult.allResults);
