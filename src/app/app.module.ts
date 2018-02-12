@@ -1,7 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import {DropdownModule} from "primeng/primeng";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
@@ -26,7 +25,6 @@ import { MutationResultsService } from "../services/mutation-results.service";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    DropdownModule,
     FormsModule
   ],
   providers: [MutationResultsService],
