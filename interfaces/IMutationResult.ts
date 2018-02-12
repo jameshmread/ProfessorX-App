@@ -5,8 +5,8 @@ export interface IMutationResult {
       lineNumber: number;
       origionalCode: string;
       mutatedCode: string;
-      numPassedTests: number;
-      numFailedTests: number;
-      mutantKilled: boolean;
+      numPassedTests: number | string;
+      numFailedTests: number | string;
+      mutantKilled: boolean | string;
       mutationAttemptFailure: Object;
 }

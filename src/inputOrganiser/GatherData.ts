@@ -47,5 +47,5 @@ export class GatherData extends InputOrganiser {
               duration.push(this.inputData[0]["duration"][timeDivision]);
             });
             return duration;
-          }
+      }
 }

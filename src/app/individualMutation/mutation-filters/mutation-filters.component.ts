@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { SelectItem } from "primeng/primeng";
-
-import { IPrimengDropdown } from "../../../../interfaces/IPrimengDropdown";
+import { Component, OnInit } from "@angular/core";
+import { MutationResultsService } from "../../../services/mutation-results.service";
+import { Filters } from "../../../preProcessors/Filters";
+import { ResultFields } from "../../../../enums/ResultFields";
 
 @Component({
   selector: "app-mutation-filters",
@@ -12,31 +12,20 @@ import { IPrimengDropdown } from "../../../../interfaces/IPrimengDropdown";
 
 export class MutationFiltersComponent implements OnInit {
 
-  @Input() public srcFiles: Array<string> = [];
-  @Input() public mutators: Array<{mutatorName: string, mutatorDescription: string}> = [];
+  public srcFiles: Array<string>;
+  public filters: Array<string>;
 
-  public sourceFilesDropDown: Array<IPrimengDropdown> =
-  [{label: "Select Source File", value: {id: -1, name: "Select"}}];
   public selectedSourceFile = "Select";
+  public selectedFilter = "Select";
 
-  public mutatorsDropdown: Array<IPrimengDropdown> =
-  [{label: "Select Mutator", value: {id: -1, name: "Select"}}];
-  public selectedMutator = "Select";
-
-  constructor () { }
+  constructor (private resultsService: MutationResultsService) { }
 
   public ngOnInit () {
-    this.addSourceFileDropdownOptions();
-  }
+    this.srcFiles =
+    Filters.removeArrayDuplicates(
+    Filters.getIndividualProperty(
+      this.resultsService.getAllSurvivingMutants(), ResultFields.srcFileName));
 
-  public addSourceFileDropdownOptions () {
-    for (let i = 0; i < this.srcFiles.length; i++) {
-      this.sourceFilesDropDown.push(
-        {
-          label: this.srcFiles[i],
-          value: {id: i, name: this.srcFiles[i]}
-        });
-    }
+    this.filters = Object.keys(ResultFields);
   }
-
 }

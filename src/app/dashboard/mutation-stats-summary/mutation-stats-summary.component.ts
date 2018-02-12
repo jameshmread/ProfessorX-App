@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { MutationResultsService } from "../../../services/mutation-results.service";
 
 @Component({
   selector: "app-mutation-stats-summary",
@@ -7,29 +8,20 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class MutationStatsSummaryComponent implements OnInit {
 
-  @Input() public mutatorResults: Array<boolean> = [];
-
   public killedMutants: number;
   public survivingMutants: number;
+  public totalMutationScore: number;
 
-  public totalMutationScore;
+  constructor (private resultsService: MutationResultsService) {}
 
   public ngOnInit () {
-    this.killedMutants = this.getKilledMutants(this.mutatorResults);
-    this.survivingMutants = this.mutatorResults.length - this.killedMutants;
-    this.setMutationScore();
+    this.killedMutants = this.resultsService.getAllKilledMutants().length;
+    this.survivingMutants = this.resultsService.getAllSurvivingMutants().length;
+    this.totalMutationScore = this.setMutationScore();
   }
 
-  public setMutationScore (){
-      if (this.survivingMutants === 0){
-        this.totalMutationScore = 100;
-      }else {
-        this.totalMutationScore =
-        (this.killedMutants / (this.survivingMutants + this.killedMutants)) * 100;
-      }
-  }
-
-  public getKilledMutants (mutatorResults: Array<boolean>): number {
-    return mutatorResults.filter((a) => a).length;
+  public setMutationScore (): number{
+    const totalSuccessfulMutations = this.killedMutants + this.survivingMutants;
+    return Number((this.killedMutants / totalSuccessfulMutations * 100).toFixed(2));
   }
 }
