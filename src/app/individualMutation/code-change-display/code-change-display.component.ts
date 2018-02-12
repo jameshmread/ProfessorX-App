@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
-
-import { ICodeDisplay } from "../../../../interfaces/ICodeDisplay";
+import { Component, OnInit } from "@angular/core";
+import { MutationResultsService } from "../../../services/mutation-results.service";
+import { ResultFields } from "../../../../enums/ResultFields";
 
 
 @Component({
@@ -11,24 +11,16 @@ import { ICodeDisplay } from "../../../../interfaces/ICodeDisplay";
 
 export class CodeChangeDisplayComponent implements OnInit {
 
-  @Input() public survivingMutants;
+  public survivingMutants;
 
-  public codeObjects: Array<ICodeDisplay> = [];
+  constructor (private resultService: MutationResultsService) {}
 
   public ngOnInit () {
-    for (let i = 0; i < Object.keys(this.survivingMutants).length; i++){
-      this.codeObjects.push({
-        lineNumber: this.survivingMutants[i]["lineNumber"],
-        sourceFile: this.survivingMutants[i]["SRC_FILE"],
-        origionalCode: this.survivingMutants[i]["origionalCode"],
-        mutatedCode: this.survivingMutants[i]["mutatedCode"]
-      });
-      // mutator type needs to be brought in too
-    }
-    this.sortCodeByLineNumber();
+    this.survivingMutants = this.resultService.getAllSurvivingMutants();
+
   }
 
   public sortCodeByLineNumber () {
-    this.codeObjects.sort((a, b) => a.lineNumber - b.lineNumber);
+    this.survivingMutants.sort((a, b) => a[ResultFields.lineNumber] - b[ResultFields.lineNumber]);
   }
 }

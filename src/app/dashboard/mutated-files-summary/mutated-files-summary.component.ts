@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { MutationResultsService } from "../../../services/mutation-results.service";
+import { Filters } from "../../../preProcessors/Filters";
+import { ResultFields } from "../../../../enums/ResultFields";
 
 @Component({
   selector: "app-mutated-files-summary",
@@ -7,11 +10,15 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class MutatedFilesSummaryComponent implements OnInit {
 
-  @Input() public sourceFiles;
+  public sourceFiles;
 
-  constructor () { }
+  constructor (private mResults: MutationResultsService) { }
 
   public ngOnInit () {
+    this.sourceFiles =
+      Filters.removeArrayDuplicates(
+        Filters.getIndividualProperty(this.mResults.getAllMutationResults(), ResultFields.srcFileName)
+      );
   }
 
 }
