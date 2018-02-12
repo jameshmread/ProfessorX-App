@@ -1,20 +1,8 @@
-component_depth: 4
 languages:
 - typescript
 
 production:
-  include:
-    - /src/**/*\.ts
   exclude:
-    - /src/**/*\.spec\.ts
     - /src/app/app\.module\.ts
     - /src/polyfills\.ts
-
-test:
-  include:
-    - /src/**/*\.spec\.ts
-  exclude:
-    - /src/**/*\.ts
-
-exclude:
-- /src/testUtilities/stubs/\.*
+    - /src/testUtilities/\.*
