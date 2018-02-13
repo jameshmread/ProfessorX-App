@@ -1,10 +1,3 @@
-
-
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bbff479fe8134acc871d58230a4ec02a)](https://www.codacy.com/app/j.h.m.read/ProfessorX-App?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jameshmread/ProfessorX-App&amp;utm_campaign=Badge_Grade)
-
-[![BCH compliance](https://bettercodehub.com/edge/badge/jameshmread/ProfessorX-App?branch=master)](https://bettercodehub.com/)
-
 <h1 align="center"> ProfessorX - Front End Client </h1>
 
 <p align="center">
