@@ -18,7 +18,7 @@ export class ProgressBarComponent implements OnInit {
     this.totalNumberOfReaults = this.mResults.getAllMutationResults().length;
     this.mutantsSurvived = (this.mResults.getAllSurvivingMutants().length / this.totalNumberOfReaults) * 100;
     this.mutantsKilled = (this.mResults.getAllKilledMutants().length / this.totalNumberOfReaults ) * 100;
-    this.failedMutations = (this.mResults.getFailedMutationAttempts().length / this.totalNumberOfReaults ) * 100;
+    this.failedMutations = (this.mResults.getAllFailedMutationAttempts().length / this.totalNumberOfReaults ) * 100;
   }
 
 }

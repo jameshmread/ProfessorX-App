@@ -79,7 +79,7 @@ describe("MutationResultsService", () => {
     service.setAllMutationResults([
       StubMutationResult.mutationResultSuccessSurvived,
       StubMutationResult.mutationResultSuccessSurvived]);
-    expect(service.getFailedMutationAttempts().length).toEqual(0);
+    expect(service.getAllFailedMutationAttempts().length).toEqual(0);
   }));
 
   it("should return 1 when given a failed mutation",
@@ -88,7 +88,7 @@ describe("MutationResultsService", () => {
       StubMutationResult.mutationResultSuccessSurvived,
       StubMutationResult.mutationResultFail,
       StubMutationResult.mutationResultSuccessSurvived]);
-    expect(service.getFailedMutationAttempts().length).toEqual(1);
+    expect(service.getAllFailedMutationAttempts().length).toEqual(1);
   }));
 
   it("should return a failed mutation result when given one",
@@ -97,7 +97,7 @@ describe("MutationResultsService", () => {
       StubMutationResult.mutationResultSuccessSurvived,
       StubMutationResult.mutationResultFail,
       StubMutationResult.mutationResultSuccessSurvived]);
-    expect(service.getFailedMutationAttempts()[0]).toEqual(StubMutationResult.mutationResultFail);
+    expect(service.getAllFailedMutationAttempts()[0]).toEqual(StubMutationResult.mutationResultFail);
   }));
 
   it("should return survivors from a particular line number 3",
