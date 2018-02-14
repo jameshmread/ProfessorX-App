@@ -11,13 +11,13 @@ export class RequestManagerFactory {
     constructor (request: IResultRequest) {
         switch (request.resultCategory){
             case ResultCategories.all:
-                return new AllResultsRequestManager(new MutationResultsService());
+                return new AllResultsRequestManager(new MutationResultsService()).processRequest(request);
             case ResultCategories.survived:
-                return new SurvivedResultsRequestManager(new MutationResultsService());
+                return new SurvivedResultsRequestManager(new MutationResultsService()).processRequest(request);
             case ResultCategories.killed:
-                return new KilledResultsRequestManager(new MutationResultsService());
+                return new KilledResultsRequestManager(new MutationResultsService()).processRequest(request);
             case ResultCategories.failed:
-                return new FailedResultsRequestManager(new MutationResultsService());
+                return new FailedResultsRequestManager(new MutationResultsService()).processRequest(request);
             default: return Error("Request manager factory could not find an appropriate request manager");
         }
     }
