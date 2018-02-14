@@ -12,6 +12,7 @@ import { MutationFiltersComponent } from "./individualMutation/mutation-filters/
 import { CodeChangeDisplayComponent } from "./individualMutation/code-change-display/code-change-display.component";
 import { MutationResultsService } from "../services/mutation-results.service";
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { IndividualMutationComponent } from "./individualMutation/individual-mutation.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
     MutatedFilesSummaryComponent,
     MutationFiltersComponent,
     CodeChangeDisplayComponent,
-    DashboardComponent
+    DashboardComponent,
+    IndividualMutationComponent
   ],
   imports: [
     BrowserModule,
