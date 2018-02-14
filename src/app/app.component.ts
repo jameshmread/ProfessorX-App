@@ -17,18 +17,7 @@ export class AppComponent{
   public currentTab = "Dashboard";
 
   constructor (private mResultsService: MutationResultsService) {
-    const dataGatherer = new GatherData();
-    const resultsArray = new GatherData().getResultsArray();
     this.mResultsService.setAllMutationResults(new GatherData().getResultsArray());
-    // this.duration = dataGatherer.getDuration();
-    // this.sourceFiles = resultsArray.map((result) => result.srcFileName);
-    // this.mutatorResults = resultsArray.map((result) => result.mutantKilled);
-    // this.survivingMutants = resultsArray.map((result) => {
-    //   if (result.mutantKilled) {
-    //     return result;
-    //   }
-    // });
-    console.log(this);
   }
 
   public getCurrentTab (event){
