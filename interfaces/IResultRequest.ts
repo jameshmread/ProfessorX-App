@@ -1,8 +1,9 @@
 import { ResultFields } from "../enums/ResultFields";
+import { ResultCategories } from "../enums/ResultCategories";
 
 export interface IResultRequest {
     unique: boolean;
-    resultCategory: string;
+    resultCategory: ResultCategories;
     filterResultBy: ResultFields;
     filterValue: any;
 }
