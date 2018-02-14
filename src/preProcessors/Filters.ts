@@ -1,3 +1,6 @@
+import { ResultFields } from "../../enums/ResultFields";
+import { IMutationResult } from "../../interfaces/IMutationResult";
+
 export class Filters {
 
     public static removeArrayDuplicates (inputArray: Array<any>): Array<any> {
@@ -6,5 +9,9 @@ export class Filters {
 
     public static getIndividualProperty (array: Array<any>, propertyName: string) {
         return array.map((item) => item[propertyName]);
+    }
+
+    public static filterResultBy (array: Array<IMutationResult>, attributeToFilterBy: ResultFields, filterValue: any) {
+        return array.filter((item) => item[attributeToFilterBy] === filterValue);
     }
 }

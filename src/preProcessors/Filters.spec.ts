@@ -1,4 +1,6 @@
 import { Filters } from "./Filters";
+import { StubMutationResult } from "../testUtilities/stubs/StubMutationResult";
+import { ResultFields } from "../../enums/ResultFields";
 
 describe("Filters", () => {
     let filters: Filters;
@@ -29,5 +31,15 @@ describe("Filters", () => {
             {property2 : "bye"}
         ];
         expect(Filters.getIndividualProperty(inputArray, "property1")).toEqual(["hello", "hello", undefined]);
+    });
+
+    it("should return results only with specific line number", () => {
+        const inputArray = StubMutationResult.allResults;
+        expect(Filters.filterResultBy(inputArray, ResultFields.lineNumber, 3).length).toEqual(3);
+    });
+
+    it("should return no results when trying to get an invalid filter e.g. boolean = 3", () => {
+        const inputArray = StubMutationResult.allResults;
+        expect(Filters.filterResultBy(inputArray, ResultFields.mutationAttemptFailure, 3).length).toEqual(0);
     });
 });
