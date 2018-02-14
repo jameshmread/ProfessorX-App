@@ -10,14 +10,12 @@ import { MutationResultsService } from "../services/mutation-results.service";
 export class AppComponent{
 
   public duration = [];
-  public sourceFiles: Array<string> = [];
-  public mutatorResults: Array<boolean> = [];
-  public survivingMutants: Array<Object> = [];
-
   public currentTab = "Dashboard";
 
   constructor (private mResultsService: MutationResultsService) {
-    this.mResultsService.setAllMutationResults(new GatherData().getResultsArray());
+    const dataGatherer = new GatherData();
+    this.mResultsService.setAllMutationResults(dataGatherer.getResultsArray());
+    this.duration = dataGatherer.getDuration();
   }
 
   public getCurrentTab (event){
