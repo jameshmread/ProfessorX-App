@@ -5,14 +5,14 @@ import { IRunnerConfig } from "../../interfaces/IRunnerConfig";
 @Injectable()
 export class MutationResultsService {
 
-  private mutationResults: Array<IMutationResult>;
+  private static mutationResults: Array<IMutationResult>;
   private testRunnerConfig: IRunnerConfig;
   constructor () {
 
   }
 
   public setAllMutationResults (results: Array<IMutationResult>): void {
-    this.mutationResults = results;
+    MutationResultsService.mutationResults = results;
   }
 
   public setTestRunnerConfig (runnerConfig: IRunnerConfig): void {
@@ -20,7 +20,7 @@ export class MutationResultsService {
   }
 
   public getAllMutationResults (): Array<IMutationResult> {
-    return this.mutationResults;
+    return MutationResultsService.mutationResults;
   }
 
   public getTestRunnerConfig (): IRunnerConfig {
@@ -28,15 +28,15 @@ export class MutationResultsService {
   }
 
   public getAllSurvivingMutants (): Array<IMutationResult> {
-    return this.mutationResults.filter((result) => result.mutantKilled === false);
+    return MutationResultsService.mutationResults.filter((result) => result.mutantKilled === false);
   }
 
   public getAllKilledMutants (): Array<IMutationResult> {
-    return this.mutationResults.filter((result) => result.mutantKilled === true);
+    return MutationResultsService.mutationResults.filter((result) => result.mutantKilled === true);
   }
 
   public getAllFailedMutationAttempts (): Array<IMutationResult> {
-    return this.mutationResults.filter((result) =>
+    return MutationResultsService.mutationResults.filter((result) =>
       result.mutationAttemptFailure === Object(result.mutationAttemptFailure));
   }
 
