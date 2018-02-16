@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
+import { RequestManagerFactory } from "../../../requestManagers/RequestManagerFactory";
+import { RequestManager } from "../../../requestManagers/RequestManager";
+import { ResultCategories } from "../../../../enums/ResultCategories";
+import { ResultRequest } from "../../../objects/ResultRequest";
 import { MutationResultsService } from "../../../services/mutation-results.service";
+import { ResultFields } from "../../../../enums/ResultFields";
 
 @Component({
   selector: "app-progress-bar",
@@ -11,14 +16,20 @@ export class ProgressBarComponent implements OnInit {
   public mutantsSurvived: number;
   public mutantsKilled: number;
   public failedMutations: number;
-  private totalNumberOfReaults: number;
-  constructor (private mResults: MutationResultsService) { }
+  private totalNumberOfResults: number;
+
+  constructor (private mResults: MutationResultsService) {}
 
   public ngOnInit () {
-    this.totalNumberOfReaults = this.mResults.getAllMutationResults().length;
-    this.mutantsSurvived = (this.mResults.getAllSurvivingMutants().length / this.totalNumberOfReaults) * 100;
-    this.mutantsKilled = (this.mResults.getAllKilledMutants().length / this.totalNumberOfReaults ) * 100;
-    this.failedMutations = (this.mResults.getAllFailedMutationAttempts().length / this.totalNumberOfReaults ) * 100;
+    const requestManagerFact = new RequestManagerFactory();
+    this.totalNumberOfResults =
+    requestManagerFact.getRequestManager(new ResultRequest(false, ResultCategories.all, null, null)).length;
+    const x = requestManagerFact.getRequestManager(new ResultRequest(false, ResultCategories.all, null, null));
+    console.log("tot results", x);
+    // this.totalNumberOfResults = this.mResults.getAllMutationResults().length;
+    this.mutantsSurvived = (this.mResults.getAllSurvivingMutants().length / this.totalNumberOfResults) * 100;
+    this.mutantsKilled = (this.mResults.getAllKilledMutants().length / this.totalNumberOfResults ) * 100;
+    this.failedMutations = (this.mResults.getAllFailedMutationAttempts().length / this.totalNumberOfResults ) * 100;
   }
 
 }

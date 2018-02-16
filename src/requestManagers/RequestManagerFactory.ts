@@ -8,7 +8,7 @@ import { FailedResultsRequestManager } from "./FailedResultsRequestManager";
 
 export class RequestManagerFactory {
 
-    constructor (request: IResultRequest) {
+    public getRequestManager (request: IResultRequest) {
         switch (request.resultCategory){
             case ResultCategories.all:
                 return new AllResultsRequestManager(new MutationResultsService()).processRequest(request);
@@ -18,7 +18,7 @@ export class RequestManagerFactory {
                 return new KilledResultsRequestManager(new MutationResultsService()).processRequest(request);
             case ResultCategories.failed:
                 return new FailedResultsRequestManager(new MutationResultsService()).processRequest(request);
-            default: return Error("Request manager factory could not find an appropriate request manager");
+            default: return null;
         }
     }
 }
