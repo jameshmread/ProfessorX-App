@@ -1,37 +1,49 @@
-<div class="container"> 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Chosen Mutator on <code>HelloWorld.ts</code></h3>
-        </div>
-        <div class="panel-body">
-          <div *ngFor="let survivingMutant of survivingMutants">
-            <div class="jumbotron" style="padding: 10px">
-                <div class="container">
-                    <h3 class="panel-title">Mutation Name</h3>
-                    <div class="col-md-6">
-                        <div class="panel panel-danger code-panel" >
-                            <div class="panel-body" >
-                                Line # {{survivingMutant.lineNumber}}
-                                <code class="code-snippit-style removed-code">{{survivingMutant.origionalCode}}</code>
-                                <div class="glyphicon glyphicon-minus red"></div>
-                                <div class="glyphicon glyphicon-minus red"></div>
+
+<ul class="list-group">
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+        <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+        <li class="list-group-item list-group-item-danger">{{codeDiff.diff}} {{codeDiff.line}}</li>
+      </ul>
+                      
+
+<div class="container">
+    <div class="card-header">
+        <h3 class="card-title">Chosen Mutator on
+            <code>HelloWorld.ts</code>
+        </h3>
+    </div>
+    <div *ngFor="let survivingMutant of survivingMutants; let mutantNo = index">
+        <div class="jumbotron">
+            <div class="container">
+                <h3 class="card-title">Mutation Name</h3>
+                <div class="card text-white">
+                    <div class="card-body">Line # {{survivingMutant.lineNumber}}
+                        <ul class="list-group">                        
+                            <div *ngFor="let lines of survivingMutant.origionalCode; let i = index">
+                                <div *ngIf="i !== codeDiff[mutantNo].line - 1 && i !== codeDiff[mutantNo].line; else diff">
+                                    <code class="list-group-item">
+                                        {{lines}}
+                                    </code>
+                                </div>
+                                <ng-template #diff>
+                                    <div *ngIf="i === codeDiff[mutantNo].line - 1;">
+                                        <code class="list-group-item list-group-item-danger">
+                                            {{lines}}
+                                        </code>
+                                    </div>
+                                    <div *ngIf="i === codeDiff[mutantNo].line;">
+                                        <code class="list-group-item list-group-item-info">
+                                            {{lines}}
+                                        </code>
+                                    </div>
+                                </ng-template>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="panel panel-success code-panel">
-                            <div class="panel-body">
-                                Line # {{survivingMutant.lineNumber}}
-                                <code class="code-snippit-style added-code">{{survivingMutant.mutatedCode}}</code>
-                                <div class="glyphicon glyphicon-plus green"></div>
-                                <div class="glyphicon glyphicon-plus green" ></div>
-                            </div>
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
-          </div>
-          <br>
         </div>
     </div>
+    <br>
 </div>
