@@ -3,8 +3,8 @@ export interface IMutationResult {
       srcFileName: string;
       testFilePath: string;
       lineNumber: number;
-      origionalCode: string;
-      mutatedCode: string;
+      origionalCode: Array<string>;
+      mutatedCode: Array<string>;
       numPassedTests: number | string;
       numFailedTests: number | string;
       mutantKilled: boolean | string;
