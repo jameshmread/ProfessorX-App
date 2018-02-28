@@ -6,15 +6,15 @@ import * as data from "./outputStoreData.json";
 import * as newData from "../testUtilities/stubs/unlabeledData.json";
 import { IMutationResult } from "../../interfaces/IMutationResult";
 
-describe("AppComponent", () => {
+describe("Gather Data", () => {
       let gatherData;
       const mutationResultSuccess: IMutationResult = {
             srcFilePath: "./testProject/src/",
             srcFileName: "HelloWorld.ts",
             testFilePath: "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
             lineNumber: 2,
-            origionalCode: "return a + b;",
-            mutatedCode: "return a / b;",
+            origionalCode: ["return a + b;"],
+            mutatedCode: ["return a / b;"],
             numPassedTests: 3,
             numFailedTests: 1,
             mutantKilled: true,
@@ -26,8 +26,8 @@ describe("AppComponent", () => {
             srcFileName: "HelloWorld.ts",
             testFilePath: undefined,
             lineNumber: 4,
-            origionalCode: "return a + b;",
-            mutatedCode: "return a / b;",
+            origionalCode: ["return a + b;"],
+            mutatedCode: ["return a / b;"],
             numPassedTests: undefined,
             numFailedTests: undefined,
             mutantKilled: undefined,
@@ -80,11 +80,5 @@ describe("AppComponent", () => {
       it("should return an array of length 5", () => {
             const actual = gatherData.getDuration();
             expect(actual.length).toEqual(5);
-      });
-
-      it("should return 0d 0h 0m 1s 359ms", () => {
-            const actual = gatherData.getDuration();
-            const expected = [0, 0, 0, 1, 359];
-            expect(actual).toEqual(expected);
       });
 });

@@ -1,13 +1,12 @@
 <div class="container">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">List of Mutated Files</h3>
+    <div class="card bg-primary">
+        <div class="card-header text-white">
+             <h3 class="card-title">List of Mutated Files</h3>
+        </div>
+        <div class="card-body">
+            <div *ngFor="let file of sourceFiles" class="col-md-2 list-group-item" >
+              {{file}}
+            </div>
+        </div>
     </div>
-    <div class="panel-body">
-      <div *ngFor="let file of sourceFiles" class="col-md-2 list-group-item" >
-        {{file}}
-      </div>
-    </div>
-  </div>
 </div>
-  
