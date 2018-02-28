@@ -31,8 +31,4 @@ export class CodeChangeDisplayComponent implements OnInit {
             });
         });
     }
-
-    public sortCodeByLineNumber () {
-        this.survivingMutants.sort((a, b) => a[ResultFields.lineNumber] - b[ResultFields.lineNumber]);
-    }
 }
