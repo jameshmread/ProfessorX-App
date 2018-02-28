@@ -2,20 +2,13 @@
 <div style="padding-top: 75px"></div>
 <div *ngIf="currentTab == 'Dashboard'">
   <div class="container">
-    <h1 class="display-1 duration">Time Taken</h1>
-    <h1 class="display-1 duration">
-      {{duration[0]}}d
-      {{duration[1]}}h 
-      {{duration[2]}}m
-      {{duration[3]}}s
-      {{duration[4]}}ms
+    <h1 class="duration">Time Taken</h1>
+    <h1 class="duration">
+      {{duration[0]}}d {{duration[1]}}h {{duration[2]}}m {{duration[3]}}s {{duration[4]}}ms
     </h1>
   </div>
   <app-dashboard></app-dashboard>
 </div>
-
 <div *ngIf="currentTab == 'In-Depth View'">
-
-<app-individual-mutation></app-individual-mutation>
-
+  <app-individual-mutation></app-individual-mutation>
 </div>
