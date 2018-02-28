@@ -5,3 +5,16 @@
 .panel-head-padding{
   padding-bottom: 25px;
 }
+
+.padding {
+  padding-right: 100px;
+  padding-left: 20px;
+}
+
+.justify-right {
+  text-align: right;
+}
+
+.justify-center {
+  text-align: center
+}

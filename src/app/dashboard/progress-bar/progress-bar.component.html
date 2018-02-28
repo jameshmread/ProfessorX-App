@@ -1,7 +1,16 @@
 <div class="container">
   <div class="progress">
-      <div class="progress-bar progress-bar-success progress-bar-striped active" [style.width.%]="mutantsKilled"></div>
-      <div class="progress-bar progress-bar-danger" [style.width.%]="mutantsSurvived"></div>
-      <div class="progress-bar progress-bar-warning" [style.width.%]="failedMutations"></div>
+    <div class="progress-bar bg-success" role="progressbar" [style.width.%]="mutantsKilled" aria-valuenow="15" aria-valuemin="0"
+      aria-valuemax="100">
+      {{mutantsKilled}}
+    </div>
+    <div class="progress-bar bg-warning" role="progressbar" [style.width.%]="mutantsSurvived" aria-valuenow="30" aria-valuemin="0"
+      aria-valuemax="100">
+      {{mutantsSurvived}}
+    </div>
+    <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="failedMutations" aria-valuenow="20" aria-valuemin="0"
+      aria-valuemax="100">
+      {{failedMutations}}
     </div>
   </div>
+</div>
