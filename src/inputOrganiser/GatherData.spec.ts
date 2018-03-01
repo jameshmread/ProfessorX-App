@@ -12,9 +12,8 @@ describe("Gather Data", () => {
             srcFilePath: "./testProject/src/",
             srcFileName: "HelloWorld.ts",
             testFilePath: "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
-            lineNumber: 2,
-            origionalCode: ["return a + b;"],
-            mutatedCode: ["return a / b;"],
+            origionalCode: [{lineText: "return a + b;", lineNumber: 2}],
+            mutatedCode: [{lineText: "return a / b;", lineNumber: 2}],
             numPassedTests: 3,
             numFailedTests: 1,
             mutantKilled: true,
@@ -25,9 +24,8 @@ describe("Gather Data", () => {
             srcFilePath: "./testProject/src/",
             srcFileName: "HelloWorld.ts",
             testFilePath: undefined,
-            lineNumber: 4,
-            origionalCode: ["return a + b;"],
-            mutatedCode: ["return a / b;"],
+            origionalCode: [{lineText: "return a + b;", lineNumber: 1}],
+            mutatedCode: [{lineText: "return a / b;", lineNumber: 1}],
             numPassedTests: undefined,
             numFailedTests: undefined,
             mutantKilled: undefined,
@@ -47,9 +45,9 @@ describe("Gather Data", () => {
             expect(actual.runnerConfig).not.toBeUndefined();
       });
 
-      it("should not have a null linenumber element", () => {
+      it("should not have a null num passed tests element", () => {
             const actual: Array<IMutationResult> = gatherData.getResultsArray();
-            expect(actual[0].lineNumber).not.toBeUndefined();
+            expect(actual[0].origionalCode).not.toBeUndefined();
       });
 
       it("should not have a null srcfile path element", () => {
