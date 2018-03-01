@@ -100,25 +100,6 @@ describe("MutationResultsService", () => {
     expect(service.getFailedMutationAttempts()[0]).toEqual(StubMutationResult.mutationResultFail);
   }));
 
-  it("should return survivors from a particular line number 3",
-  inject([MutationResultsService], (service: MutationResultsService) => {
-    service.setAllMutationResults(StubMutationResult.allResults);
-    const expected = [
-      StubMutationResult.mutationResultSuccessSurvived,
-      StubMutationResult.mutationResultSuccessSurvived1
-    ];
-    expect(service.getSurvivorsByFilter("lineNumber", 3)).toEqual(expected);
-  }));
-
-  it("should return survivors from a particular line number 33",
-  inject([MutationResultsService], (service: MutationResultsService) => {
-    service.setAllMutationResults(StubMutationResult.allResults);
-    const expected = [
-      StubMutationResult.mutationResultSuccessSurvived2
-    ];
-    expect(service.getSurvivorsByFilter("lineNumber", 33)).toEqual(expected);
-  }));
-
   it("should return survivors from a particular filename",
   inject([MutationResultsService], (service: MutationResultsService) => {
     service.setAllMutationResults(StubMutationResult.allResults);
