@@ -4,35 +4,47 @@
             <code>HelloWorld.ts</code>
         </h3>
     </div>
-    <div *ngFor="let survivingMutant of survivingMutants; let mutantNo = index">
+    <div *ngFor="let survivingMutant of survivingMutants">
         <div class="jumbotron">
             <div class="container">
                 <h3 class="card-title">Mutation Name</h3>
-                <div class="card text-white">
-                    <div class="card-body">Line # {{survivingMutant.lineNumber}}
-                        <ul class="list-group">                        
+                    <div class="card-body row">
+                        <ul class="list-group col">                        
                             <div *ngFor="let lines of survivingMutant.origionalCode; let i = index">
-                                <div *ngIf="i !== codeDiff[mutantNo].line - 1 && i !== codeDiff[mutantNo].line; else diff">
-                                    <code class="list-group-item">
-                                        {{lines}}
-                                    </code>
-                                </div>
-                                <ng-template #diff>
-                                    <div *ngIf="i === codeDiff[mutantNo].line - 1;">
+                                <div class="row">
+                                    <div class="list-group-item col-sm-1 text-align-center">
+                                        {{lines.lineNumber}}
+                                    </div>
+                                    <div *ngIf="lines.lineText === survivingMutant.mutatedCode[i].lineText; else removed">
+                                        <code class="list-group-item">
+                                            {{lines.lineText}}
+                                        </code>
+                                    </div>
+                                    <ng-template #removed>
                                         <code class="list-group-item list-group-item-danger">
-                                            {{lines}}
+                                            {{lines.lineText}}
                                         </code>
+                                    </ng-template>    
+                                </div>
+                            </div>
+                        </ul>
+                        <ul class="list-group col">                        
+                            <div *ngFor="let lines of survivingMutant.mutatedCode; let i = index">
+                                <div class="row">
+                                    <div *ngIf="lines.lineText === survivingMutant.origionalCode[i].lineText; else added">
+                                            <code class="list-group-item">
+                                                {{lines.lineText}}
+                                            </code>
                                     </div>
-                                    <div *ngIf="i === codeDiff[mutantNo].line;">
-                                        <code class="list-group-item list-group-item-info">
-                                            {{lines}}
-                                        </code>
-                                    </div>
-                                </ng-template>
+                                        <ng-template #added>
+                                            <code class="list-group-item list-group-item-info">
+                                                {{lines.lineText}}
+                                            </code>
+                                        </ng-template>    
+                                </div>
                             </div>
                         </ul>
                     </div>
-                </div>
             </div>
         </div>
     </div>

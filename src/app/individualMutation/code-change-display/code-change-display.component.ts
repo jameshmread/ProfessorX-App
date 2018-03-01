@@ -13,20 +13,21 @@ import { IMutationResult } from "../../../../interfaces/IMutationResult";
 export class CodeChangeDisplayComponent implements OnInit {
 
     public survivingMutants: Array<IMutationResult>;
-    public codeDiff: Array<Object> = [];
+    public codeDiff: Array<number> = [];
 
     constructor (private resultService: MutationResultsService) { }
 
     public ngOnInit () {
         this.survivingMutants = this.resultService.getAllSurvivingMutants();
-        this.survivingMutants.forEach((survivor) => {
-            survivor.mutatedCode.forEach((line, index) => {
-                if (survivor.origionalCode.indexOf(line) < 0) {
-                    this.codeDiff.push({
-                        diff: survivor.mutatedCode[index],
-                        line: index + 1
-                    });
-                    survivor.origionalCode.splice(index + 1, 0, survivor.mutatedCode[index]);
+        this.getDiff();
+    }
+
+    private getDiff () {
+        this.survivingMutants.forEach((mutant) => {
+            mutant.origionalCode.forEach((line, index) => {
+                if (mutant.mutatedCode.indexOf(line) < 0) {
+                    this.codeDiff.push((mutant.origionalCode[index].lineNumber));
+                    return;
                 }
             });
         });
