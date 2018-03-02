@@ -10,9 +10,10 @@ export class NavbarComponent{
   @Output() public currentTab = new EventEmitter<string>();
 
   public tabs: Array<string> = ["Dashboard", "In-Depth View"];
+  public currentTabText = this.tabs[0];
 
   public selectTab (navItem: string) {
     this.currentTab.emit(navItem);
+    this.currentTabText = navItem;
   }
-
 }

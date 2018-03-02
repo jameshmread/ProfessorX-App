@@ -1,9 +1,17 @@
-<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
-    <div class="navbar-brand" (click)="selectTab('Dashboard')">Professor X</div>
-    <ul class="nav navbar-nav">
-        <li (click)="selectTab(tabs[0])" class="nav-item"><a class="nav-link">{{tabs[0]}}</a>
-        </li>
-        <li (click)="selectTab(tabs[1])" class="nav-item"><a class="nav-link">{{tabs[1]}}</a>
-        </li>
-    </ul>
-</nav>
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-blue scrolling-navbar ie-nav" [containerInside]="false">
+        <logo>
+            <a class="logo navbar-brand" href="#" (click)="selectTab('Dashboard')"><strong>Professor X</strong></a>
+        </logo>
+        <links>
+            <ul class="navbar-nav mr-auto">
+                <div *ngFor="let tab of tabs; let i = index">
+                    <li class="nav-item waves-light active"
+                    [class.active]="currentTabText === tab" 
+                    (click)="selectTab(tabs[i])"
+                    mdbRippleRadius>
+                        <a class="nav-link">{{tab}}</a>
+                    </li>
+                </div>
+            </ul>
+        </links>
+    </mdb-navbar>
