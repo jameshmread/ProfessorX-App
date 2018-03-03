@@ -1,10 +1,10 @@
 <div class="container">
     <div class="card-header">
         <h3 class="card-title">Chosen Mutator on
-            <code>HelloWorld.ts</code>
+            <code>{{currentFilter.fileName}}</code>
         </h3>
     </div>
-    <div *ngFor="let survivingMutant of survivingMutants">
+    <div *ngFor="let survivingMutant of filteredMutants">
         <div class="jumbotron">
             <div class="container">
                 <h3 class="card-title">Mutation Name</h3>

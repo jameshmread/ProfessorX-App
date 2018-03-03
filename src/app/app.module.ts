@@ -14,6 +14,7 @@ import { CodeChangeDisplayComponent } from "./individualMutation/code-change-dis
 import { MutationResultsService } from "../services/mutation-results.service";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { IndividualMutationComponent } from "./individualMutation/individual-mutation.component";
+import { IndividualMutationService } from "../services/individual-mutation.service";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { IndividualMutationComponent } from "./individualMutation/individual-mut
     MDBBootstrapModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [MutationResultsService],
+  providers: [MutationResultsService, IndividualMutationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

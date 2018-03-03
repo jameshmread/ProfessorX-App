@@ -2,14 +2,14 @@
   <div class="card text-white bg-primary">
     <div class="row card-body">
       <div class="col">
-        <h3 class="card-title">File Containing Mutants</h3>
-        <select [(ngmodel)]="selectedSourceFile" class="select-picker">
+        <h3 class="card-title">Filter by File</h3>
+        <select [(ngModel)]="selectedSourceFile" class="select-picker" (change)="setSelectedsourceFile()">
             <option *ngFor="let file of srcFiles" value="{{file}}">{{file}}</option>
           </select>
       </div>
       <div class="col">
         <h3 class="card-title">Filter by Mutator</h3>
-        <select [(ngmodel)]="selectedFilter" class="select-picker">
+        <select [(ngModel)]="selectedFilter" class="select-picker" (change)="setSelectedFilterType()">
           <option *ngFor="let filter of filters" value="{{filter}}">{{filter}}</option>
         </select>
       </div>
