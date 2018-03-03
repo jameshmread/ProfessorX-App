@@ -16,7 +16,7 @@ export class CodeChangeDisplayComponent implements OnInit {
 
     public codeDiff: Array<number> = [];
     public filteredMutants: Array<IMutationResult>;
-    private currentFilter: IFilterType;
+    public currentFilter: IFilterType;
     private survivingMutants: Array<IMutationResult>;
 
     constructor (
