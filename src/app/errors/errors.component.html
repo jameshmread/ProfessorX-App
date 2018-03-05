@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="card-title">Title</h1>
+      <!-- <div class="card container"> -->
+        <div *ngFor="let failure of failures" class="row jumbotron">
+          <h2 class="card-title">
+              File Name: <samp>{{failure.mutationAttemptFailure.nodeToBeMutated.parentFileName}}</samp>
+          </h2>
+          <div class="container card-deck">
+            <div class="col card error-card white-text">
+                <h5 class="card-title">Origional Code</h5>
+              <samp>
+                {{failure.origionalCode}}
+              </samp>
+            </div>
+            <div class="col card  error-card white-text">
+              <h5 class="card-header">Attempted Mutation</h5>
+                <div class="card-text white-text">
+                  {{failure.mutationAttemptFailure.attemptedMutation}}
+                </div>
+            </div>
+          </div>
+          <h5 class="card-title">Reason For Failure</h5>          
+          <div class="card-body">
+                {{failure.mutationAttemptFailure.reasonForFailure}}
+          </div>
+        </div>
+      <!-- </div> -->
+  <br>
+</div>
