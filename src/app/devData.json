@@ -29,8 +29,15 @@
                         "plainText": "+"
                     }
                 },
-                  "origionalCode": ["return a + b;"],
-                  "mutatedCode": ["return a + b;"]
+                  "origionalCode": [
+                    { "lineText": "    public failedMutation () {\r", "lineNumber": 33
+                    },
+                    { "lineText": "        return 1 + 4;\r", "lineNumber": 34
+                    },
+                    { "lineText": "    }\r", "lineNumber": 35
+                    }
+                ],
+                  "mutatedCode": []
             },
             {
                   "SRC_FILE_PATH": "./testProject/src/",
@@ -47,16 +54,41 @@
                               "parentFileName": "FileTwo.ts"
                         }
                   },
-                  "origionalCode": ["if (i % 2 === 0 && 1 > 0){"],
-                  "mutatedCode": ["if (i % 2 === 0 && 1 > 0){"]
+                  "origionalCode":[
+                    { "lineText": "    public newFunction () {\r", "lineNumber": 31
+                    },
+                    { "lineText": "if (i % 2 === 0 && 1 > 0){;\r", "lineNumber": 32
+                    },
+                    { "lineText": "return true;\r", "lineNumber": 33
+                    },
+                    { "lineText": "    }\r", "lineNumber": 34
+                    },
+                    { "lineText": "    }\r", "lineNumber": 35
+                    }
+                ],
+                  "mutatedCode": []
             },
             {
                   "SRC_FILE_PATH": "./testProject/src/",
                   "SRC_FILE": "HelloWorld.ts",
                   "testFilePath": "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
                   "lineNumber": 2,
-                  "origionalCode": ["return a + b;"],
-                  "mutatedCode": ["return a / b;"],
+                  "origionalCode":  [
+                    { "lineText": "    public newFunction () {\r", "lineNumber": 1
+                    },
+                    { "lineText": "        return true;\r", "lineNumber": 2
+                    },
+                    { "lineText": "    }\r", "lineNumber": 3
+                    }
+                ],
+                  "mutatedCode": [
+                    { "lineText": "    public newFunction () {\r", "lineNumber": 1
+                    },
+                    { "lineText": "        return false;\r", "lineNumber": 2
+                    },
+                    { "lineText": "    }\r", "lineNumber": 3
+                    }
+                ],
                   "numberOfPassedTests": 3,
                   "numberOfFailedTests": 1,
                   "mutantKilled": true
