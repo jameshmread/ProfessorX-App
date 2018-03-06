@@ -3,11 +3,11 @@ import { MutationResultsService } from "../../services/mutation-results.service"
 import { IMutationResult } from "../../../interfaces/IMutationResult";
 
 @Component({
-  selector: "app-errors",
-  templateUrl: "./errors.component.html",
-  styleUrls: ["./errors.component.scss"]
+  selector: "app-mutation-failures",
+  templateUrl: "./mutation-failures.component.html",
+  styleUrls: ["./mutation-failures.component.scss"]
 })
-export class ErrorsComponent implements OnInit {
+export class MutationFailures implements OnInit {
 
   public failures: Array<IMutationResult>;
   constructor (private resultsService: MutationResultsService) { }
