@@ -15,6 +15,7 @@ import { MutationResultsService } from "../services/mutation-results.service";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { IndividualMutationComponent } from "./individualMutation/individual-mutation.component";
 import { IndividualMutationService } from "../services/individual-mutation.service";
+import { MutationFailures } from "./mutationFailures/mutation-failures.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { IndividualMutationService } from "../services/individual-mutation.servi
     MutationFiltersComponent,
     CodeChangeDisplayComponent,
     DashboardComponent,
-    IndividualMutationComponent
+    IndividualMutationComponent,
+    MutationFailures
   ],
   imports: [
     BrowserModule,
