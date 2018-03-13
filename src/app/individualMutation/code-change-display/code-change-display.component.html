@@ -8,43 +8,46 @@
         <div class="jumbotron">
             <div class="container">
                 <h3 class="card-title">Mutation Name</h3>
-                    <div class="card-body row">
-                        <ul class="list-group col">                        
-                            <div *ngFor="let lines of survivingMutant.origionalCode; let i = index">
-                                <div class="row">
-                                    <div class="list-group-item col-sm-1 text-align-center">
-                                        {{lines.lineNumber}}
-                                    </div>
-                                    <div *ngIf="lines.lineText === survivingMutant.mutatedCode[i].lineText; else removed">
-                                        <code class="list-group-item">
+                <div class="card-body row code-panel">
+                    <div class="col">
+                        <div class="" *ngFor="let lines of survivingMutant.origionalCode; let i = index">
+                            <div class="row container">
+                                <div class="col-sm-1 text-align-center">
+                                    {{lines.lineNumber}}
+                                </div>
+                                <div *ngIf="lines.lineText === survivingMutant.mutatedCode[i].lineText; else removed">
+                                    <code class="col container">
+                                        {{lines.lineText}}
+                                    </code>
+                                </div>
+                                <ng-template #removed>
+                                    <code class="col removed-code container">
                                             {{lines.lineText}}
                                         </code>
-                                    </div>
-                                    <ng-template #removed>
-                                        <code class="list-group-item list-group-item-danger">
-                                            {{lines.lineText}}
-                                        </code>
-                                    </ng-template>    
-                                </div>
+                                </ng-template>
                             </div>
-                        </ul>
-                        <ul class="list-group col">                        
-                            <div *ngFor="let lines of survivingMutant.mutatedCode; let i = index">
-                                <div class="row">
-                                    <div *ngIf="lines.lineText === survivingMutant.origionalCode[i].lineText; else added">
-                                            <code class="list-group-item">
-                                                {{lines.lineText}}
-                                            </code>
-                                    </div>
-                                        <ng-template #added>
-                                            <code class="list-group-item list-group-item-info">
-                                                {{lines.lineText}}
-                                            </code>
-                                        </ng-template>    
-                                </div>
-                            </div>
-                        </ul>
+                        </div>
                     </div>
+                    <div class="col">
+                        <div *ngFor="let lines of survivingMutant.mutatedCode; let i = index">
+                            <div class="row">
+                                <div class="col-sm-1 text-align-center">
+                                    {{lines.lineNumber}}
+                                </div>
+                                <div *ngIf="lines.lineText === survivingMutant.origionalCode[i].lineText; else added">
+                                    <code class="container col">
+                                        {{lines.lineText}}
+                                    </code>
+                                </div>
+                                <ng-template #added>
+                                    <code class="added-code container col">
+                                        {{lines.lineText}}
+                                    </code>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

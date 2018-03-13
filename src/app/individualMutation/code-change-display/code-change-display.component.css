@@ -5,30 +5,23 @@
 
 .removed-code {
       color: black;
-      background: rgba(255, 0, 0, 0.575);
+      background-color: rgb(255, 102, 102);
 }
 
 .added-code {
       color: black;
-      background: #beebcb;
+      background-color: rgb(102, 255, 102);
 }
 
-.green {
-      color: green;
-}
 
 .red {
       color: red;
 }
 
 .code-panel {
-      background: white;
+      background: rgb(238, 234, 234);
 }
 
 .text-align-center {
       text-align: center;
-}
-
-.list-group-item-info {
-      background-color: rgb(102, 255, 102);
 }
