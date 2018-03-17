@@ -1,18 +1,14 @@
-.code-snippit-style { 
-      font-size: 30px;
-      font-family: Courier New, Courier, monospace
-}
-
 .removed-code {
       color: black;
       background-color: rgb(255, 102, 102);
+      border-radius: 5px;
 }
 
 .added-code {
       color: black;
       background-color: rgb(102, 255, 102);
+      border-radius: 5px;
 }
-
 
 .red {
       color: red;
@@ -20,6 +16,8 @@
 
 .code-panel {
       background: rgb(238, 234, 234);
+      border-radius: 5px;
+      
 }
 
 .text-align-center {
