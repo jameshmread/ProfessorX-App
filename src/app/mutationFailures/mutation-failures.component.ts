@@ -14,6 +14,5 @@ export class MutationFailures implements OnInit {
 
  public ngOnInit () {
    this.failures = this.resultsService.getFailedMutationAttempts();
-   console.log(this.failures);
   }
 }
