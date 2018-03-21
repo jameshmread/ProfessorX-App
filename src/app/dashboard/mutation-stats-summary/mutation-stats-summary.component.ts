@@ -17,11 +17,6 @@ export class MutationStatsSummaryComponent implements OnInit {
   public ngOnInit () {
     this.killedMutants = this.resultsService.getAllKilledMutants().length;
     this.survivingMutants = this.resultsService.getAllSurvivingMutants().length;
-    this.totalMutationScore = this.setMutationScore();
-  }
-
-  public setMutationScore (): number{
-    const totalSuccessfulMutations = this.killedMutants + this.survivingMutants;
-    return Number((this.killedMutants / totalSuccessfulMutations * 100).toFixed(2));
+    this.totalMutationScore = this.resultsService.getOverallSummary().mutationScore;
   }
 }

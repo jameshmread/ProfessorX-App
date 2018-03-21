@@ -6,4 +6,6 @@ export abstract class InputOrganiser {
       public abstract getRunnerConfig (): IRunnerConfig;
       public abstract getResultsArray (): Array<IMutationResult>;
       public abstract getDuration (): Object;
+      public abstract getSummaryFileList () : Array<Object>;
+      public abstract getOverallScores () : Object;
 }
