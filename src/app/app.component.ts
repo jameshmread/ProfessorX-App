@@ -16,6 +16,7 @@ export class AppComponent{
     const dataGatherer = new GatherData();
     this.mResultsService.setAllMutationResults(dataGatherer.getResultsArray());
     this.duration = dataGatherer.getDuration();
+    this.mResultsService.setSummaryInfo(dataGatherer.getSummaryFileList(), dataGatherer.getOverallScores());
   }
 
   public getCurrentTab (event){
