@@ -15,8 +15,8 @@ export class MutationStatsSummaryComponent implements OnInit {
   constructor (private resultsService: MutationResultsService) {}
 
   public ngOnInit () {
-    this.killedMutants = this.resultsService.getAllKilledMutants().length;
-    this.survivingMutants = this.resultsService.getAllSurvivingMutants().length;
+    this.killedMutants = this.resultsService.getOverallSummary().totalKilledMutants;
+    this.survivingMutants = this.resultsService.getOverallSummary().totalSurvivingMutants;
     this.totalMutationScore = this.resultsService.getOverallSummary().mutationScore;
   }
 }
