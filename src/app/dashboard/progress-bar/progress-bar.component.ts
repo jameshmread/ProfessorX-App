@@ -11,14 +11,14 @@ export class ProgressBarComponent implements OnInit {
   public mutantsSurvived: number;
   public mutantsKilled: number;
   public failedMutations: number;
-  private totalNumberOfReaults: number;
   constructor (private mResults: MutationResultsService) { }
 
   public ngOnInit () {
-    this.totalNumberOfReaults = this.mResults.getAllMutationResults().length;
-    this.mutantsSurvived = (this.mResults.getAllSurvivingMutants().length / this.totalNumberOfReaults) * 100;
-    this.mutantsKilled = (this.mResults.getAllKilledMutants().length / this.totalNumberOfReaults ) * 100;
-    this.failedMutations = (this.mResults.getFailedMutationAttempts().length / this.totalNumberOfReaults ) * 100;
+    const allMutations = this.mResults.getOverallSummary().totalKilledMutants
+    + this.mResults.getOverallSummary().totalSurvivingMutants + this.mResults.getFailedMutationAttempts().length;
+    this.mutantsSurvived = (this.mResults.getOverallSummary().totalSurvivingMutants / allMutations) * 100;
+    this.mutantsKilled = (this.mResults.getOverallSummary().totalKilledMutants / allMutations ) * 100;
+    this.failedMutations = (this.mResults.getFailedMutationAttempts().length / allMutations ) * 100;
     this.mutantsSurvived = Number(Number(this.mutantsSurvived).toFixed(2));
     this.mutantsKilled = Number(Number(this.mutantsKilled).toFixed(2));
     this.failedMutations = Number(Number(this.failedMutations).toFixed(2));
