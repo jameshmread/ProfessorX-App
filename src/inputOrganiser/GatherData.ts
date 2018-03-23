@@ -4,7 +4,7 @@ import { ISummary } from "../../interfaces/ISummary";
 import { IFileList } from "../../interfaces/IFileList";
 
 import { InputOrganiser } from "./InputOrganiser";
-import * as data from "../app/devData.json";
+import * as data from "../app/newData.json";
 
 export class GatherData extends InputOrganiser {
 
@@ -28,9 +28,6 @@ export class GatherData extends InputOrganiser {
                         testFilePath: result["testFilePath"],
                         origionalCode: result["origionalCode"],
                         mutatedCode: result["mutatedCode"],
-                        numPassedTests: result["numberPassedTests"],
-                        numFailedTests: result["numberFailedTests"],
-                        mutantKilled: result["mutantKilled"],
                         mutationAttemptFailure: result["mutationAttemptFailure"]
                   });
             });

@@ -14,9 +14,6 @@ describe("Gather Data", () => {
             testFilePath: "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
             origionalCode: [{lineText: "return a + b;", lineNumber: 2}],
             mutatedCode: [{lineText: "return a / b;", lineNumber: 2}],
-            numPassedTests: 3,
-            numFailedTests: 1,
-            mutantKilled: true,
             mutationAttemptFailure: undefined
       };
 
@@ -26,9 +23,6 @@ describe("Gather Data", () => {
             testFilePath: undefined,
             origionalCode: [{lineText: "return a + b;", lineNumber: 1}],
             mutatedCode: [{lineText: "return a / b;", lineNumber: 1}],
-            numPassedTests: undefined,
-            numFailedTests: undefined,
-            mutantKilled: undefined,
             mutationAttemptFailure: {}
       };
       beforeEach(() => {
@@ -63,11 +57,6 @@ describe("Gather Data", () => {
       it("file name should not be changed with unsuccessful mutation", () => {
             const actual: IMutationResult = gatherData.fillNonApplicableFields(mutationResultFail);
             expect(actual.srcFileName).toEqual("HelloWorld.ts");
-      });
-
-      it("mutant killed should be defined with unsuccessful mutation", () => {
-            const actual: IMutationResult = gatherData.fillNonApplicableFields(mutationResultFail);
-            expect(actual.mutantKilled).toBeDefined();
       });
 
       it("mutant attempt failure should be defined with successful mutation", () => {
