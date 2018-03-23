@@ -38,18 +38,18 @@ export class MutationResultsService {
 
   public getAllSurvivingMutants (): Array<IMutationResult> {
     return this.mutationResults.filter((result) =>
-    result.mutatedCode !== null && result.mutationAttemptFailure === "N/A"
+    result.mutatedCode !== null
   );
   }
 
   public getAllKilledMutants (): Array<IMutationResult> {
     return this.mutationResults.filter((result) =>
-    result.mutatedCode === null && result.mutationAttemptFailure === "N/A");
+    result.mutatedCode === null && result.mutationAttemptFailure === null);
   }
 
   public getFailedMutationAttempts (): Array<IMutationResult> {
     return this.mutationResults.filter((result) =>
-      result.mutationAttemptFailure === Object(result.mutationAttemptFailure));
+      result.mutationAttemptFailure !== null);
   }
 
   public getSurvivorsByFilter (attributeToFilterBy: string, value: any) {
