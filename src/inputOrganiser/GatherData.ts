@@ -4,7 +4,7 @@ import { ISummary } from "../../interfaces/ISummary";
 import { IFileList } from "../../interfaces/IFileList";
 
 import { InputOrganiser } from "./InputOrganiser";
-import * as data from "../app/newData.json";
+import * as data from "../app/devData.json";
 
 export class GatherData extends InputOrganiser {
 
