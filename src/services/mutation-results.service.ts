@@ -37,11 +37,14 @@ export class MutationResultsService {
   }
 
   public getAllSurvivingMutants (): Array<IMutationResult> {
-    return this.mutationResults.filter((result) => result.mutantKilled === false);
+    return this.mutationResults.filter((result) =>
+    result.mutatedCode !== null && result.mutationAttemptFailure === "N/A"
+  );
   }
 
   public getAllKilledMutants (): Array<IMutationResult> {
-    return this.mutationResults.filter((result) => result.mutantKilled === true);
+    return this.mutationResults.filter((result) =>
+    result.mutatedCode === null && result.mutationAttemptFailure === "N/A");
   }
 
   public getFailedMutationAttempts (): Array<IMutationResult> {
