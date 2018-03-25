@@ -9,15 +9,26 @@ import { Filters } from "../../../preProcessors/Filters";
 })
 export class MutatedFilesSummaryComponent implements OnInit {
 
-  public sourceFileNames;
-  public survived;
-  public total;
+  public sourceFileNames: Array<string>;
+  public survived: Array<number>;
+  public total: Array<number>;
+
+  public unMutatedSourceFiles: Array<string> = [];
+
   constructor (private mResults: MutationResultsService) { }
 
   public ngOnInit () {
     this.sourceFileNames = this.mResults.getSummaryFiles().files;
     this.survived = this.mResults.getSummaryFiles().mutantsSurvivedForEach;
     this.total = this.mResults.getSummaryFiles().totalMutationsForEach;
+    this.getUnmutatedSourceFiles();
   }
 
+  private getUnmutatedSourceFiles (): any {
+    this.sourceFileNames.forEach((file, index) => {
+      if (this.total[index] === 0) {
+        this.unMutatedSourceFiles.push(file);
+      }
+    });
+  }
 }
