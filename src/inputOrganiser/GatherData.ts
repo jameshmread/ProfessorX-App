@@ -1,7 +1,7 @@
 import { IRunnerConfig } from "../../interfaces/IRunnerConfig";
 import { IMutationResult } from "../../interfaces/IMutationResult";
 import { ISummary } from "../../interfaces/ISummary";
-import { IFileList } from "../../interfaces/IFileList";
+import { IMutationScoresPerFile } from "../../interfaces/IMutationScoresPerFile";
 
 import { InputOrganiser } from "./InputOrganiser";
 import * as data from "../app/devData.json";
@@ -51,8 +51,8 @@ export class GatherData extends InputOrganiser {
             return duration;
       }
 
-      public getSummaryFileList (): Array<IFileList> {
-            return this.inputData[0]["fileList"];
+      public getSummaryFileList (): IMutationScoresPerFile {
+            return this.inputData[0]["scoresPerFile"];
       }
 
       public getOverallScores (): ISummary {

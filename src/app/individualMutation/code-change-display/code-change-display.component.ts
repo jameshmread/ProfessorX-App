@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { MutationResultsService } from "../../../services/mutation-results.service";
 import { ResultFields } from "../../../../enums/ResultFields";
 import { IMutationResult } from "../../../../interfaces/IMutationResult";
@@ -25,7 +25,7 @@ export class CodeChangeDisplayComponent implements OnInit {
 
     public ngOnInit () {
         this.subscribeToServices();
-        this.survivingMutants = this.resultService.getAllSurvivingMutants();
+        this.survivingMutants = this.resultService.getAllSurvivingMutants().filter((item, index) => index < 20);
         this.filteredMutants = this.survivingMutants;
         this.currentFilter = {fileName: this.filteredMutants[0].srcFileName, mutationType: ResultFields.lineNumber};
         this.getDiff();
@@ -50,6 +50,7 @@ export class CodeChangeDisplayComponent implements OnInit {
 
     private filterMutants () {
         this.filteredMutants =
-        this.resultService.getSurvivorsByFilter(ResultFields.srcFileName, this.currentFilter.fileName);
+        this.resultService.getSurvivorsByFilter(ResultFields.srcFileName, this.currentFilter.fileName)
+        .filter((item, index) => index < 20);
     }
 }

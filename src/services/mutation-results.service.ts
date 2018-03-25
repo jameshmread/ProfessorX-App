@@ -2,13 +2,14 @@ import { Injectable } from "@angular/core";
 import { IMutationResult } from "../../interfaces/IMutationResult";
 import { IRunnerConfig } from "../../interfaces/IRunnerConfig";
 import { ISummary } from "../../interfaces/ISummary";
-import { IFileList } from "../../interfaces/IFileList";
+import { IMutationScoresPerFile } from "../../interfaces/IMutationScoresPerFile";
+
 @Injectable()
 export class MutationResultsService {
 
   private mutationResults: Array<IMutationResult>;
   private testRunnerConfig: IRunnerConfig;
-  private summaryFiles: Array<IFileList>;
+  private summaryFiles: IMutationScoresPerFile;
   private overallScores: ISummary;
 
   constructor () {
@@ -23,7 +24,7 @@ export class MutationResultsService {
     this.testRunnerConfig = runnerConfig;
   }
 
-  public setSummaryInfo (files: Array<IFileList>, overallScores: ISummary) {
+  public setSummaryInfo (files: IMutationScoresPerFile, overallScores: ISummary) {
     this.summaryFiles = files;
     this.overallScores = overallScores;
   }
@@ -35,21 +36,20 @@ export class MutationResultsService {
   public getTestRunnerConfig (): IRunnerConfig {
     return this.testRunnerConfig;
   }
-
+  // TODO fix unit tests
   public getAllSurvivingMutants (): Array<IMutationResult> {
     return this.mutationResults.filter((result) =>
-    result.mutatedCode !== null
-  );
+    result.mutatedCode !== null && result.mutationAttemptFailure === undefined);
   }
 
   public getAllKilledMutants (): Array<IMutationResult> {
     return this.mutationResults.filter((result) =>
-    result.mutatedCode === null && result.mutationAttemptFailure === null);
+    result.mutatedCode === null && result.mutationAttemptFailure === undefined);
   }
 
   public getFailedMutationAttempts (): Array<IMutationResult> {
     return this.mutationResults.filter((result) =>
-      result.mutationAttemptFailure !== null);
+      result.mutationAttemptFailure !== undefined);
   }
 
   public getSurvivorsByFilter (attributeToFilterBy: string, value: any) {
@@ -57,7 +57,7 @@ export class MutationResultsService {
     .filter((result) => result[attributeToFilterBy] === value);
   }
 
-  public getSummaryFiles (): Array<IFileList> {
+  public getSummaryFiles (): IMutationScoresPerFile {
     return this.summaryFiles;
   }
 

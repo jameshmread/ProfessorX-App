@@ -15,15 +15,15 @@
                         Number of Mutations Performed
                     </div>
             </div>
-            <div *ngFor="let file of sourceFiles" class="row">
+            <div *ngFor="let file of sourceFileNames; let i = index" class="row">
                 <div class="col">
-                    {{file.fileName}}
+                    {{file}}
                 </div>
                 <div class="col-md-3">
-                    {{file.mutantsSurvived}}
+                    {{survived[i]}}
                 </div>
                 <div class="col-md-3">
-                    {{file.totalMutationsOnFile}}
+                    {{total[i]}}
                 </div>
             </div>
         </div>
