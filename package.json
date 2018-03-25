@@ -9,7 +9,8 @@
     "test": "ng test --sourcemaps=false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "push": "npm run lint && npm run build && npm run test && git push"
+    "CI-TEST": "ng test --singleRun=true",
+    "push": "npm run lint && npm run build && npm run CI-TEST && git push"
   },
   "private": true,
   "dependencies": {
