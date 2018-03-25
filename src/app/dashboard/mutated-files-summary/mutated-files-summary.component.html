@@ -27,5 +27,20 @@
                 </div>
             </div>
         </div>
+        <div class="card-header text-white">
+            <h3 class="card-title">List of Files Included but Not Mutated</h3>
+       </div>
+       <div class="card-body">
+           <div class="row card-header">
+               <div class="col">
+                       File Name
+                   </div>
+           </div>
+           <div *ngFor="let file of unMutatedSourceFiles; let i = index" class="row">
+               <div class="col">
+                   {{file}}
+               </div>
+           </div>
+       </div>
     </div>
 </div>
