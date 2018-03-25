@@ -1,7 +1,7 @@
 import { IRunnerConfig } from "../../interfaces/IRunnerConfig";
 import { IMutationResult } from "../../interfaces/IMutationResult";
 import { ISummary } from "../../interfaces/ISummary";
-import { IMutationScoresPerFile } from "../../interfaces/ImutationScoresPerFile";
+import { IMutationScoresPerFile } from "../../interfaces/IMutationScoresPerFile";
 
 import { InputOrganiser } from "./InputOrganiser";
 import * as data from "../app/devData.json";

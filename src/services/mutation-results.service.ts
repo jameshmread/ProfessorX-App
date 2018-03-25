@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { IMutationResult } from "../../interfaces/IMutationResult";
 import { IRunnerConfig } from "../../interfaces/IRunnerConfig";
 import { ISummary } from "../../interfaces/ISummary";
-import { IMutationScoresPerFile } from "../../interfaces/ImutationScoresPerFile";
+import { IMutationScoresPerFile } from "../../interfaces/IMutationScoresPerFile";
 
 @Injectable()
 export class MutationResultsService {

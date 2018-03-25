@@ -1,6 +1,6 @@
 import { IRunnerConfig } from "../../interfaces/IRunnerConfig";
 import { IMutationResult } from "../../interfaces/IMutationResult";
-import { IMutationScoresPerFile } from "../../interfaces/ImutationScoresPerFile";
+import { IMutationScoresPerFile } from "../../interfaces/IMutationScoresPerFile";
 
 export abstract class InputOrganiser {
       constructor (protected inputData: Object) {}
