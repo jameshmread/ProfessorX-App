@@ -9,12 +9,15 @@ import { Filters } from "../../../preProcessors/Filters";
 })
 export class MutatedFilesSummaryComponent implements OnInit {
 
-  public sourceFiles;
-
+  public sourceFileNames;
+  public survived;
+  public total;
   constructor (private mResults: MutationResultsService) { }
 
   public ngOnInit () {
-    this.sourceFiles = Filters.removeArrayDuplicates(this.mResults.getSummaryFiles());
+    this.sourceFileNames = this.mResults.getSummaryFiles().files;
+    this.survived = this.mResults.getSummaryFiles().mutantsSurvivedForEach;
+    this.total = this.mResults.getSummaryFiles().totalMutationsForEach;
   }
 
 }
