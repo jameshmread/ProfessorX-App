@@ -12,7 +12,7 @@ export class MutatedFilesSummaryComponent implements OnInit {
   public sourceFileNames: Array<string>;
   public survived: Array<number>;
   public total: Array<number>;
-
+  public score: Array<string> = [];
   public unMutatedSourceFiles: Array<string> = [];
 
   constructor (private mResults: MutationResultsService) { }
@@ -21,13 +21,37 @@ export class MutatedFilesSummaryComponent implements OnInit {
     this.sourceFileNames = this.mResults.getSummaryFiles().files;
     this.survived = this.mResults.getSummaryFiles().mutantsSurvivedForEach;
     this.total = this.mResults.getSummaryFiles().totalMutationsForEach;
+
+    this.getMutationScoreForEachFile();
     this.getUnmutatedSourceFiles();
+    this.removeUnmutatedSourceFilesFromList();
   }
 
   private getUnmutatedSourceFiles (): any {
     this.sourceFileNames.forEach((file, index) => {
       if (this.total[index] === 0) {
         this.unMutatedSourceFiles.push(file);
+      }
+    });
+  }
+
+  private getMutationScoreForEachFile () {
+    this.total.forEach((item, index) => {
+      if (this.survived[index] === 0){
+        this.score.push("100 %");
+      } else {
+        this.score.push((((this.total[index] - this.survived[index]) / this.total[index]) * 100).toFixed(2) + " %");
+      }
+  });
+  }
+
+  private removeUnmutatedSourceFilesFromList () {
+    this.sourceFileNames.forEach((item, index, arr) => {
+      if (this.unMutatedSourceFiles.indexOf(item) >= 0) {
+        this.sourceFileNames[index] = null;
+        this.survived[index] = null;
+        this.total[index] = null;
+        this.score[index] = null;
       }
     });
   }

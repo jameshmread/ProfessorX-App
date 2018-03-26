@@ -8,10 +8,13 @@
                 <div class="col">
                         File Name
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
+                        Mutation Score
+                    </div>
+                    <div class="col-md-2">
                         Number of Surviving Mutants
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         Number of Mutations Performed
                     </div>
             </div>
@@ -19,10 +22,13 @@
                 <div class="col">
                     {{file}}
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
+                    {{score[i]}}
+                </div>
+                <div class="col-md-2">
                     {{survived[i]}}
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     {{total[i]}}
                 </div>
             </div>
