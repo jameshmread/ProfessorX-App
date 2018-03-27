@@ -36,7 +36,7 @@ export class MutationResultsService {
   public getTestRunnerConfig (): IRunnerConfig {
     return this.testRunnerConfig;
   }
-  // TODO fix unit tests
+
   public getAllSurvivingMutants (): Array<IMutationResult> {
     return this.mutationResults.filter((result) =>
     result.mutatedCode !== null && result.mutationAttemptFailure === undefined);
