@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MutationResultsService } from "../../../services/mutation-results.service";
 import { NavbarSummaryService } from "../../../services/navbar-summary.service";
+import { MutationScoreDivisions } from "../../../../enums/MutationScoreDivisions";
 
 @Component({
   selector: "app-mutation-stats-summary",

@@ -16,7 +16,10 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col">
-                <div class="c100 p{{roundedTotalMutationScore}} big dark green">
+                <div class="c100 p{{roundedTotalMutationScore}} big dark"
+                [class.green]="totalMutationScore >= 70"
+                [class.orange]="totalMutationScore >= 60 && totalMutationScore < 70"
+                [class.red]="totalMutationScore <= 50">
                     <span>{{totalMutationScore}}%</span>
                     <div class="slice">
                         <div class="bar"></div>
