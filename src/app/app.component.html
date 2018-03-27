@@ -1,6 +1,6 @@
 <app-navbar (currentTab)="getCurrentTab($event)"></app-navbar>
 <div style="padding-top: 75px"></div>
-<div *ngIf="currentTab == 'Dashboard'">
+<div *ngIf="currentTab == tabs.dashboard">
   <div class="container">
     <h1 class="duration">Time Taken</h1>
     <h1 class="duration">
@@ -9,10 +9,10 @@
   </div>
   <app-dashboard></app-dashboard>
 </div>
-<div *ngIf="currentTab == 'In-Depth View'">
+<div *ngIf="currentTab == tabs.survivingMutants">
   <app-individual-mutation></app-individual-mutation>
 </div>
 
-<div *ngIf="currentTab == 'Failures'">
+<div *ngIf="currentTab == tabs.failures">
   <app-mutation-failures></app-mutation-failures>
 </div>

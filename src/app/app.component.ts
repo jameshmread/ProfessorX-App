@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { GatherData } from "../inputOrganiser/GatherData";
 import { MutationResultsService } from "../services/mutation-results.service";
+import { NavbarTabs } from "../../enums/NavbarTabs";
 
 @Component({
   selector: "app-root",
@@ -11,6 +12,8 @@ export class AppComponent{
 
   public duration = [];
   public currentTab = "Dashboard";
+
+  public tabs = NavbarTabs;
 
   constructor (private mResultsService: MutationResultsService) {
     const dataGatherer = new GatherData();
