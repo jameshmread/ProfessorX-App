@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MutationResultsService } from "../../../services/mutation-results.service";
 import { Filters } from "../../../preProcessors/Filters";
-
+import { MutationScoreDivisions } from "../../../../enums/MutationScoreDivisions";
 @Component({
   selector: "app-mutated-files-summary",
   templateUrl: "./mutated-files-summary.component.html",
@@ -30,9 +30,9 @@ export class MutatedFilesSummaryComponent implements OnInit {
   public setMutationScoreColour (score: string) {
     if (score === null) {return; }
     const scoreNumber: number = Number(score.substring(0, score.length - 1));
-    if (scoreNumber >= 70) {
+    if (scoreNumber >= MutationScoreDivisions.gradeA) {
       return { "background-color": "#00C851" };
-    } else if (scoreNumber >= 50) {
+    } else if (scoreNumber >= MutationScoreDivisions.gradeC) {
       return {"background-color": "#ffbb33"};
     }
     return {"background-color": "#ff4444"};
