@@ -4,6 +4,7 @@ import { ResultFields } from "../../../../enums/ResultFields";
 import { IMutationResult } from "../../../../interfaces/IMutationResult";
 import { Filters } from "../../../preProcessors/Filters";
 import { IndividualMutationService, IFilterType } from "../../../services/individual-mutation.service";
+import { NavbarSummaryService } from "../../../services/navbar-summary.service";
 
 
 @Component({
@@ -21,7 +22,9 @@ export class CodeChangeDisplayComponent implements OnInit {
 
     constructor (
         private resultService: MutationResultsService,
-        private individualService: IndividualMutationService) { }
+        private individualService: IndividualMutationService,
+        private navSummaryService: NavbarSummaryService
+    ) { }
 
     public ngOnInit () {
         this.subscribeToServices();
@@ -29,6 +32,7 @@ export class CodeChangeDisplayComponent implements OnInit {
         this.filteredMutants = this.survivingMutants;
         this.currentFilter = {fileName: this.filteredMutants[0].srcFileName, mutationType: ResultFields.lineNumber};
         this.getDiff();
+        this.setNavSummary();
     }
 
     private getDiff () {
@@ -52,5 +56,12 @@ export class CodeChangeDisplayComponent implements OnInit {
         this.filteredMutants =
         this.resultService.getSurvivorsByFilter(ResultFields.srcFileName, this.currentFilter.fileName)
         .filter((item, index) => index < 20);
+        this.setNavSummary();
     }
+
+    private setNavSummary () {
+        const fileName = this.currentFilter.fileName.split("\\");
+        this.navSummaryService.setSummary(
+            "Current File: " + this.filteredMutants[0].srcFilePath + fileName[fileName.length - 1]);
+      }
 }
