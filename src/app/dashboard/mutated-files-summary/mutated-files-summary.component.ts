@@ -27,6 +27,17 @@ export class MutatedFilesSummaryComponent implements OnInit {
     this.removeUnmutatedSourceFilesFromList();
   }
 
+  public setMutationScoreColour (score: string) {
+    if (score === null) {return; }
+    const scoreNumber: number = Number(score.substring(0, score.length - 1));
+    if (scoreNumber >= 70) {
+      return { "background-color": "#00C851" };
+    } else if (scoreNumber >= 50) {
+      return {"background-color": "#ffbb33"};
+    }
+    return {"background-color": "#ff4444"};
+  }
+
   private getUnmutatedSourceFiles (): any {
     this.sourceFileNames.forEach((file, index) => {
       if (this.total[index] === 0) {

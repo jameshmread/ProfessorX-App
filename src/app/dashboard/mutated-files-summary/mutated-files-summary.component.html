@@ -22,7 +22,7 @@
                 <div class="col">
                     {{file}}
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2" [ngStyle]="setMutationScoreColour(score[i])">
                     {{score[i]}}
                 </div>
                 <div class="col-md-2">
