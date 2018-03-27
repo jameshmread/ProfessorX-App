@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { MutationResultsService } from "../../../services/mutation-results.service";
+import { NavbarSummaryService } from "../../../services/navbar-summary.service";
 
 @Component({
   selector: "app-mutation-stats-summary",
@@ -12,12 +13,14 @@ export class MutationStatsSummaryComponent implements OnInit {
   public survivingMutants: number;
   public totalMutationScore: number;
   public roundedTotalMutationScore: number;
-  constructor (private resultsService: MutationResultsService) {}
+  constructor (private resultsService: MutationResultsService, private navService: NavbarSummaryService) {}
 
   public ngOnInit () {
     this.killedMutants = this.resultsService.getOverallSummary().totalKilledMutants;
     this.survivingMutants = this.resultsService.getOverallSummary().totalSurvivingMutants;
     this.totalMutationScore = this.resultsService.getOverallSummary().mutationScore;
     this.roundedTotalMutationScore = Math.round(this.totalMutationScore);
+
+    this.navService.setSummary("Project Mutation Score: " + this.totalMutationScore.toString() + "%");
   }
 }
