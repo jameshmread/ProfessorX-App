@@ -1,38 +1,45 @@
 <div class="container-flex">
-  <h1 class="card-title">Title</h1>
-  <div *ngFor="let failure of failures" class="row jumbotron hoverable">
-    <h2 class="card-title">
-      File Name:
-      <samp>{{failure.srcFileName}}</samp>
-    </h2>
-    <div class="container card-deck">
-      <div class="row container">
-
-        <div class="col card card-body primary-color white-text">
-          <h5 class="card-title border-bottom">Origional Code</h5>
-            <div class="row" *ngFor="let line of failure.origionalCode">
-              <samp>
-              <div class="col">{{line.lineNumber}} {{line.lineText}}</div>
-              </samp>
-            </div>
-        </div>
-
-        <div class="col card card-body success-color white-text">
-          <h5 class="card-title border-bottom">Attempted Mutation</h5>
-          <div class="card-text white-text attempted-mutation-text">
-            {{failure.mutationAttemptFailure.attemptedMutation}}
+  <div *ngIf="failures.length > 0; else noFailures">
+    <div *ngFor="let failure of failures" class="row jumbotron hoverable">
+      <h2 class="card-title">
+        File Name:
+        <samp>{{failure.srcFileName}}</samp>
+      </h2>
+      <div class="container card-deck">
+        <div class="row container">
+  
+          <div class="col card card-body primary-color white-text">
+            <h5 class="card-title border-bottom">Origional Code</h5>
+              <div class="row" *ngFor="let line of failure.origionalCode">
+                <samp>
+                <div class="col">{{line.lineNumber}} {{line.lineText}}</div>
+                </samp>
+              </div>
           </div>
+  
+          <div class="col card card-body success-color white-text">
+            <h5 class="card-title border-bottom">Attempted Mutation</h5>
+            <div class="card-text white-text attempted-mutation-text">
+              {{failure.mutationAttemptFailure.attemptedMutation}}
+            </div>
+          </div>
+  
         </div>
-
-      </div>
-      <div class="row container" style="padding-top:1%">
-        <div class="card card-body error-card white-text">
-          <h5 class="card-title border-bottom">Reason For Failure</h5>
-          {{failure.mutationAttemptFailure.reasonForFailure}}
+        <div class="row container" style="padding-top:1%">
+          <div class="card card-body error-card white-text">
+            <h5 class="card-title border-bottom">Reason For Failure</h5>
+            {{failure.mutationAttemptFailure.reasonForFailure}}
+          </div>
         </div>
       </div>
     </div>
-
+    <br>
   </div>
-  <br>
+  <ng-template #noFailures>
+    <div class="row jumbotron">
+      <div class="card card-body success-color white-text hoverable">
+        Great! No Mutations Failed to Execute.
+      </div>
+    </div>
+  </ng-template>
 </div>

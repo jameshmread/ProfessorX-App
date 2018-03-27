@@ -16,6 +16,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { IndividualMutationComponent } from "./individualMutation/individual-mutation.component";
 import { IndividualMutationService } from "../services/individual-mutation.service";
 import { MutationFailures } from "./mutationFailures/mutation-failures.component";
+import { NavbarSummaryService } from "../services/navbar-summary.service";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { MutationFailures } from "./mutationFailures/mutation-failures.component
     MDBBootstrapModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [MutationResultsService, IndividualMutationService],
+  providers: [MutationResultsService, IndividualMutationService, NavbarSummaryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

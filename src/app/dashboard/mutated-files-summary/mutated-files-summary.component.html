@@ -8,10 +8,13 @@
                 <div class="col">
                         File Name
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
+                        Mutation Score
+                    </div>
+                    <div class="col-md-2">
                         Number of Surviving Mutants
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         Number of Mutations Performed
                     </div>
             </div>
@@ -19,13 +22,31 @@
                 <div class="col">
                     {{file}}
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
+                    {{score[i]}}
+                </div>
+                <div class="col-md-2">
                     {{survived[i]}}
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     {{total[i]}}
                 </div>
             </div>
         </div>
+        <div class="card-header text-white">
+            <h3 class="card-title">List of Files Included but Not Mutated</h3>
+       </div>
+       <div class="card-body">
+           <div class="row card-header">
+               <div class="col">
+                       File Name
+                   </div>
+           </div>
+           <div *ngFor="let file of unMutatedSourceFiles; let i = index" class="row">
+               <div class="col">
+                   {{file}}
+               </div>
+           </div>
+       </div>
     </div>
 </div>

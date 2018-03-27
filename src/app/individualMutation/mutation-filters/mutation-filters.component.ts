@@ -21,7 +21,8 @@ export class MutationFiltersComponent implements OnInit {
 
   constructor (
     private resultsService: MutationResultsService,
-    private individualService: IndividualMutationService) { }
+    private individualService: IndividualMutationService
+  ) { }
 
   public ngOnInit () {
     this.srcFiles =
