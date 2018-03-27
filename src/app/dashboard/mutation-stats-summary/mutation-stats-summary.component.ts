@@ -11,12 +11,13 @@ export class MutationStatsSummaryComponent implements OnInit {
   public killedMutants: number;
   public survivingMutants: number;
   public totalMutationScore: number;
-
+  public roundedTotalMutationScore: number;
   constructor (private resultsService: MutationResultsService) {}
 
   public ngOnInit () {
     this.killedMutants = this.resultsService.getOverallSummary().totalKilledMutants;
     this.survivingMutants = this.resultsService.getOverallSummary().totalSurvivingMutants;
     this.totalMutationScore = this.resultsService.getOverallSummary().mutationScore;
+    this.roundedTotalMutationScore = Math.round(this.totalMutationScore);
   }
 }
