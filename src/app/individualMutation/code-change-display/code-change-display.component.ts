@@ -55,6 +55,7 @@ export class CodeChangeDisplayComponent implements OnInit {
     private filterMutants () {
         this.filteredMutants =
         this.resultService.getSurvivorsByFilter(ResultFields.srcFileName, this.currentFilter.fileName)
+        .filter((result) => result.mutationType === this.currentFilter.mutationType)
         .filter((item, index) => index < 20);
         this.setNavSummary();
     }

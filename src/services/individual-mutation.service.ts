@@ -23,10 +23,12 @@ export class IndividualMutationService implements OnChanges{
   public setCurrentFileName (newFileName: string) {
       this.currentFilter.fileName = newFileName;
       this.emitCurrentFilter();
-  }
+    }
 
-  public setCurrentMutationType (newType: string) {
-    this.currentFilter.mutationType = newType;
+    public setCurrentMutationType (newType: string) {
+      console.log(newType);
+      this.currentFilter.mutationType = newType;
+      this.emitCurrentFilter();
   }
 
   public getCurrentFilter (): IFilterType {
