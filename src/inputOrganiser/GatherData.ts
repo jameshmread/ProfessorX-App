@@ -28,7 +28,9 @@ export class GatherData extends InputOrganiser {
                         testFilePath: result["testFilePath"],
                         origionalCode: result["origionalCode"],
                         mutatedCode: result["mutatedCode"],
-                        mutationAttemptFailure: result["mutationAttemptFailure"]
+                        mutationAttemptFailure: result["mutationAttemptFailure"],
+                        mutationType: result["mutationType"],
+                        targetNode: result["targetNode"]
                   });
             });
             return resultsArray;
