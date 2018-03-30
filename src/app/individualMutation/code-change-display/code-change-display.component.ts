@@ -54,9 +54,14 @@ export class CodeChangeDisplayComponent implements OnInit {
 
     private filterMutants () {
         this.filteredMutants =
-        this.resultService.getSurvivorsByFilter(ResultFields.srcFileName, this.currentFilter.fileName)
-        .filter((result) => result.mutationType === this.currentFilter.mutationType)
-        .filter((item, index) => index < 20);
+        this.resultService.getSurvivorsByFilter(ResultFields.srcFileName, this.currentFilter.fileName);
+        const filteredFilesByTypes = this.filteredMutants
+        .filter((result) => result.mutationType === this.currentFilter.mutationType);
+
+        if (filteredFilesByTypes.length > 0) {
+            this.filteredMutants = filteredFilesByTypes;
+        }
+        this.filteredMutants.filter((item, index) => index < 20);
         this.setNavSummary();
     }
 
@@ -64,5 +69,5 @@ export class CodeChangeDisplayComponent implements OnInit {
         const fileName = this.currentFilter.fileName.split("\\");
         this.navSummaryService.setSummary(
             "Current File: " + this.filteredMutants[0].srcFilePath + fileName[fileName.length - 1]);
-      }
+    }
 }

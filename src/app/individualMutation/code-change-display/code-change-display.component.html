@@ -7,7 +7,7 @@
     <div *ngFor="let survivingMutant of filteredMutants">
         <div class="jumbotron">
             <div class="container-flex">
-                <h3 class="card-title">Mutation Name</h3>
+                <h3 class="card-title">Type of Mutation: {{survivingMutant.mutationType}}</h3>
                 <div class="card-body row code-panel">
                     <div class="col">
                         <div class="" *ngFor="let lines of survivingMutant.origionalCode; let i = index">
