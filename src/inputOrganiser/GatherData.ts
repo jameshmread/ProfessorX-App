@@ -20,7 +20,9 @@ export class GatherData extends InputOrganiser {
 
       public getResultsArray (): Array<IMutationResult> {
             const resultsArray = new Array<IMutationResult>();
-            this.inputData[1].forEach((result) => {
+            // i begins at 1 because runner stats are at 0
+            for (let i = 1; i < Object.keys(this.inputData).length; i++) {
+                  this.inputData[i].forEach((result) => {
                   result = this.fillNonApplicableFields(result);
                   resultsArray.push({
                         srcFilePath: result["SRC_FILE_PATH"],
@@ -33,6 +35,7 @@ export class GatherData extends InputOrganiser {
                         targetNode: result["targetNode"]
                   });
             });
+            }
             return resultsArray;
       }
 
