@@ -17,13 +17,13 @@
                                 </div>
                                 <div *ngIf="lines.lineText === survivingMutant.mutatedCode[i].lineText; else removed">
                                     <code class="col container">
-                                        {{lines.lineText}}
-                                    </code>
+                                            {{lines.lineText}}
+                                        </code>
                                 </div>
                                 <ng-template #removed>
                                     <code class="col removed-code container">
-                                            {{lines.lineText}}
-                                        </code>
+                                                {{lines.lineText}}
+                                            </code>
                                 </ng-template>
                             </div>
                         </div>
@@ -36,13 +36,13 @@
                                 </div>
                                 <div *ngIf="lines.lineText === survivingMutant.origionalCode[i].lineText; else added">
                                     <code class="container col">
-                                        {{lines.lineText}}
-                                    </code>
+                                            {{lines.lineText}}
+                                        </code>
                                 </div>
                                 <ng-template #added>
                                     <code class="added-code container col">
-                                        {{lines.lineText}}
-                                    </code>
+                                            {{lines.lineText}}
+                                        </code>
                                 </ng-template>
                             </div>
                         </div>

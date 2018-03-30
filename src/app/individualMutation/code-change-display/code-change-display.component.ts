@@ -53,15 +53,13 @@ export class CodeChangeDisplayComponent implements OnInit {
     }
 
     private filterMutants () {
-        this.filteredMutants =
-        this.resultService.getSurvivorsByFilter(ResultFields.srcFileName, this.currentFilter.fileName);
-        const filteredFilesByTypes = this.filteredMutants
-        .filter((result) => result.mutationType === this.currentFilter.mutationType);
+        const filteredByFile = this.getMutantsFilteredByFile();
 
-        if (filteredFilesByTypes.length > 0) {
-            this.filteredMutants = filteredFilesByTypes;
-        }
+        const filteredFilesByTypes = this.getMutantsFilteredByType();
+
+        this.filteredMutants = filteredFilesByTypes.filter((file) => filteredByFile.indexOf(file) > -1);
         this.filteredMutants.filter((item, index) => index < 20);
+        // Need to sort when filter returns no values
         this.setNavSummary();
     }
 
@@ -69,5 +67,19 @@ export class CodeChangeDisplayComponent implements OnInit {
         const fileName = this.currentFilter.fileName.split("\\");
         this.navSummaryService.setSummary(
             "Current File: " + this.filteredMutants[0].srcFilePath + fileName[fileName.length - 1]);
+    }
+
+    private getMutantsFilteredByFile (): Array<IMutationResult> {
+        if (this.currentFilter.fileName.startsWith("All ")) {
+            return this.resultService.getAllSurvivingMutants();
+        }
+        return this.resultService.getSurvivorsByFilter(ResultFields.srcFileName, this.currentFilter.fileName);
+    }
+
+    private getMutantsFilteredByType (): Array<IMutationResult> {
+        if (this.currentFilter.mutationType.startsWith("All ")) {
+            return this.resultService.getAllSurvivingMutants();
+        }
+        return this.resultService.getSurvivorsByFilter(ResultFields.mutationType, this.currentFilter.mutationType);
     }
 }
