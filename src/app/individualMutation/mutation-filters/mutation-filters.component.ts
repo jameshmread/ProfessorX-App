@@ -25,16 +25,8 @@ export class MutationFiltersComponent implements OnInit {
   ) { }
 
   public ngOnInit () {
-    this.srcFiles =
-    Filters.removeArrayDuplicates(
-      Filters.getIndividualProperty(
-        this.resultsService.getAllSurvivingMutants(), ResultFields.srcFileName));
-
-    this.filters = Filters.removeArrayDuplicates(
-      this.resultsService.getAllSurvivingMutants().map((item) => item.mutationType));
-
-    this.selectedSourceFile = this.srcFiles[0];
-    this.selectedFilter = this.filters[0];
+    this.setDropdownListValues();
+    this.setDefaultDropdownValues();
 
     this.individualService.setCurrentFilter({
       fileName: this.selectedSourceFile,
@@ -47,5 +39,21 @@ export class MutationFiltersComponent implements OnInit {
 
   public setSelectedFilterType () {
     this.individualService.setCurrentMutationType(this.selectedFilter);
+  }
+
+  private setDropdownListValues () {
+    this.srcFiles = ["All Files"].concat(
+    Filters.removeArrayDuplicates(
+      Filters.getIndividualProperty(
+        this.resultsService.getAllSurvivingMutants(), ResultFields.srcFileName)));
+
+    this.filters = ["All Mutator Types"].concat(
+      Filters.removeArrayDuplicates(
+      this.resultsService.getAllSurvivingMutants().map((item) => item.mutationType)));
+  }
+
+  private setDefaultDropdownValues () {
+    this.selectedSourceFile = this.srcFiles[0];
+    this.selectedFilter = this.filters[0];
   }
 }
