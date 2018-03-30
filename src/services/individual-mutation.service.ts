@@ -18,6 +18,7 @@ export class IndividualMutationService implements OnChanges{
 
     public setCurrentFilter (newFilter: IFilterType) {
         this.currentFilter = newFilter;
+        this.emitCurrentFilter();
     }
 
   public setCurrentFileName (newFileName: string) {
@@ -26,9 +27,10 @@ export class IndividualMutationService implements OnChanges{
     }
 
     public setCurrentMutationType (newType: string) {
-      console.log(newType);
-      this.currentFilter.mutationType = newType;
-      this.emitCurrentFilter();
+      if (newType.length > 0) {
+        this.currentFilter.mutationType = newType;
+        this.emitCurrentFilter();
+      }
   }
 
   public getCurrentFilter (): IFilterType {
