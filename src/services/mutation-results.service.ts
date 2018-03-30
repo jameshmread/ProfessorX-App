@@ -53,9 +53,6 @@ export class MutationResultsService {
   }
 
   public getSurvivorsByFilter (attributeToFilterBy: string, value: any) {
-    if (value.toString().startsWith("All ")) {
-      return this.getAllSurvivingMutants();
-    }
     return this.getAllSurvivingMutants()
     .filter((result) => result[attributeToFilterBy] === value);
   }
