@@ -6,17 +6,20 @@
                 <h3 class="card-title">Mutation Score</h3>
             </div>
             <div class="col">
-                <h3 class="card-title justify-center">Killed Mutants</h3>
+                <h3 class="card-title">Killed Mutants</h3>
             </div>
             <div class="col">
-                <h3 class="card-title justify-right">Surviving Mutants</h3>
+                <h3 class="card-title">Surviving Mutants</h3>
               </div>
           </div>
           </div>
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col">
-                <div class="c100 p{{roundedTotalMutationScore}} big dark green">
+                <div class="c100 p{{roundedTotalMutationScore}} big dark"
+                [class.green]="totalMutationScore >= 70"
+                [class.orange]="totalMutationScore >= 60 && totalMutationScore < 70"
+                [class.red]="totalMutationScore <= 50">
                     <span>{{totalMutationScore}}%</span>
                     <div class="slice">
                         <div class="bar"></div>
@@ -25,7 +28,7 @@
                 </div>
             </div>
             <div class="col">
-                 <h1 class="display-1 large-text padding">{{killedMutants}}</h1>
+                 <h1 class="display-1 large-text">{{killedMutants}}</h1>
             </div>
             <div class="col">
                  <h1 class="display-1 large-text">{{survivingMutants}}</h1>

@@ -18,15 +18,19 @@ export class IndividualMutationService implements OnChanges{
 
     public setCurrentFilter (newFilter: IFilterType) {
         this.currentFilter = newFilter;
+        this.emitCurrentFilter();
     }
 
   public setCurrentFileName (newFileName: string) {
       this.currentFilter.fileName = newFileName;
       this.emitCurrentFilter();
-  }
+    }
 
-  public setCurrentMutationType (newType: string) {
-    this.currentFilter.mutationType = newType;
+    public setCurrentMutationType (newType: string) {
+      if (newType.length > 0) {
+        this.currentFilter.mutationType = newType;
+        this.emitCurrentFilter();
+      }
   }
 
   public getCurrentFilter (): IFilterType {

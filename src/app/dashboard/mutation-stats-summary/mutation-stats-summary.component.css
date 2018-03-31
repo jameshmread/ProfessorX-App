@@ -883,20 +883,32 @@
 }
 /*  green bar fill */
 .c100.green.dark .bar, .c100.green.dark .fill {
-  border-color: #5fd400 !important;
+  border-color: #00C851 !important;
 }
 .c100.green.dark:hover > span {
-  color: #5fd400;
+  color: #00C851;
 }
 .c100.orange .bar, .c100.orange .fill {
   border-color: #3b321f !important;
 }
 .c100.orange:hover > span {
-  color: #dd9d22;
+  color: #ffbb33;
 }
 .c100.orange.dark .bar, .c100.orange.dark .fill {
-  border-color: #e08833 !important;
+  border-color: #ffbb33 !important;
 }
 .c100.orange.dark:hover > span {
-  color: #e08833;
+  color: #ffbb33;
+}
+.c100.red .bar, .c100.red .fill {
+  border-color: #3b321f !important;
+}
+.c100.red:hover > span {
+  color: #ff4444;
+}
+.c100.red.dark .bar, .c100.red.dark .fill {
+  border-color: #ff4444 !important;
+}
+.c100.red.dark:hover > span {
+  color: #ff4444;
 }

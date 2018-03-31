@@ -8,5 +8,7 @@ export enum ResultFields {
     numPassedTests= "numPassedTests",
     numFailedTests= "numFailedTests",
     mutantKilled= "mutantKilled",
-    mutationAttemptFailure= "mutationAttemptFailure"
+    mutationAttemptFailure= "mutationAttemptFailure",
+    mutationType = "mutationType",
+    targetNode = "targetNode"
 }

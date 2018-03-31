@@ -22,7 +22,7 @@
                 <div class="col">
                     {{file}}
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2" [ngStyle]="setMutationScoreColour(score[i])">
                     {{score[i]}}
                 </div>
                 <div class="col-md-2">
@@ -33,14 +33,21 @@
                 </div>
             </div>
         </div>
-        <div class="card-header text-white">
+        <br>
+    </div>
+    <br>
+    <div class="container-flex">
+        <div class="card-header text-white filesNotIncluded">
             <h3 class="card-title">List of Files Included but Not Mutated</h3>
        </div>
-       <div class="card-body">
+       <div class="card-body filesNotIncluded">
            <div class="row card-header">
-               <div class="col">
+                <div class="*ngIf unMutatedSourceFiles.length === 0; someUnMutatedFiles">
+                    Great! No Files Were Left Out.
+                </div>
+               <ng-template #someUnMutatedFiles class="col">
                        File Name
-                   </div>
+               </ng-template>
            </div>
            <div *ngFor="let file of unMutatedSourceFiles; let i = index" class="row">
                <div class="col">
@@ -49,4 +56,5 @@
            </div>
        </div>
     </div>
+    <br><br>
 </div>

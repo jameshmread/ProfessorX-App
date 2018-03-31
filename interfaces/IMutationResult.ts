@@ -5,4 +5,6 @@ export interface IMutationResult {
       origionalCode: Array<{lineNumber: number, lineText: string}>;
       mutatedCode: Array<{lineNumber: number, lineText: string}>;
       mutationAttemptFailure?: Object;
+      mutationType: string;
+      targetNode: string;
 }

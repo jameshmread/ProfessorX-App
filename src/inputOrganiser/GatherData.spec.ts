@@ -9,6 +9,8 @@ import { IMutationResult } from "../../interfaces/IMutationResult";
 describe("Gather Data", () => {
       let gatherData;
       const mutationResultSuccess: IMutationResult = {
+            mutationType: "",
+            targetNode: "",
             srcFilePath: "./testProject/src/",
             srcFileName: "HelloWorld.ts",
             testFilePath: "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
@@ -18,6 +20,8 @@ describe("Gather Data", () => {
       };
 
       const mutationResultFail: IMutationResult = {
+            mutationType: "",
+            targetNode: "",
             srcFilePath: "./testProject/src/",
             srcFileName: "HelloWorld.ts",
             testFilePath: undefined,
