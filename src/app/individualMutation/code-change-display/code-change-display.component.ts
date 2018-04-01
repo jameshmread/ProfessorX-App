@@ -30,7 +30,6 @@ export class CodeChangeDisplayComponent implements OnInit {
         this.subscribeToServices();
         this.survivingMutants = this.resultService.getAllSurvivingMutants().filter((item, index) => index < 20);
         this.filteredMutants = this.survivingMutants;
-        // this.filterMutants();
         this.getDiff();
         this.setNavSummary();
     }
