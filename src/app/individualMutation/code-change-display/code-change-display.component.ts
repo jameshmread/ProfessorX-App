@@ -17,7 +17,7 @@ export class CodeChangeDisplayComponent implements OnInit {
 
     public codeDiff: Array<number> = [];
     public filteredMutants: Array<IMutationResult>;
-    public currentFilter: IFilterType;
+    public currentFilter: IFilterType = {fileName: "All Files", mutationType: "All Mutator Types"};
     private survivingMutants: Array<IMutationResult>;
 
     constructor (
@@ -30,7 +30,7 @@ export class CodeChangeDisplayComponent implements OnInit {
         this.subscribeToServices();
         this.survivingMutants = this.resultService.getAllSurvivingMutants().filter((item, index) => index < 20);
         this.filteredMutants = this.survivingMutants;
-        this.currentFilter = {fileName: this.filteredMutants[0].srcFileName, mutationType: ResultFields.lineNumber};
+        // this.filterMutants();
         this.getDiff();
         this.setNavSummary();
     }
