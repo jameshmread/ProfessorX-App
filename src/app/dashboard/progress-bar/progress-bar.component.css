@@ -1,2 +1,11 @@
-.progress {height: 25px;}
-.progress-bar {height: 25px;}
+.progress {
+    height: 40px;
+    font-size: 20px;
+}
+.progress-bar {
+    height: 40px;
+    font-size: 30px;
+    font-size: 10vw;
+    font-size: 2vh;
+    font-weight: 400;
+}
