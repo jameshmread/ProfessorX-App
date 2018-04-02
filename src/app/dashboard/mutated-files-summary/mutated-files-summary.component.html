@@ -42,7 +42,7 @@
        </div>
        <div class="card-body filesNotIncluded">
            <div class="row card-header">
-                <div class="*ngIf unMutatedSourceFiles.length === 0; someUnMutatedFiles">
+                <div *ngIf="unMutatedSourceFiles.length === 0; someUnMutatedFiles">
                     Great! No Files Were Left Out.
                 </div>
                <ng-template #someUnMutatedFiles class="col">
