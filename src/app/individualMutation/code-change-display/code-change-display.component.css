@@ -10,16 +10,24 @@
       border-radius: 5px;
 }
 
-.red {
-      color: red;
-}
-
 .code-panel {
       background: rgb(238, 234, 234);
       border-radius: 5px;
-      
+      font-size: 1.25vw;
+      white-space: nowrap;
 }
 
 .text-align-center {
+      text-align: center;
+}
+
+.card-title {
+      text-align: center;
+      font-size: 2vw;
+      align-content: center;
+}
+
+.noResultsFound {
+      font-size: 4vw;
       text-align: center;
 }
