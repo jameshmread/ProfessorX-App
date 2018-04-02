@@ -5,12 +5,14 @@
       {{mutantsKilled}} % Killed Mutants
     </div>
     <div class="progress-bar bg-warning hoverable" role="progressbar" [style.width.%]="mutantsSurvived" aria-valuenow="30" aria-valuemin="0"
-      aria-valuemax="100">
+      aria-valuemax="100"
+      routerLink="/survivors">
       {{mutantsSurvived}} % Surviving Mutants
     </div>
     <div class="progress-bar bg-danger hoverable" role="progressbar" [style.width.%]="failedMutations" aria-valuenow="20" aria-valuemin="0"
-      aria-valuemax="100">
-      {{failedMutations}} % Errors
+      aria-valuemax="100"
+      routerLink="/failures">
+      {{failedMutations}} % Failures
     </div>
   </div>
 </div>
