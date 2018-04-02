@@ -18,11 +18,11 @@
                         Number of Mutations Performed
                     </div>
             </div>
-            <div *ngFor="let file of sourceFileNames; let i = index" class="row">
+            <div *ngFor="let file of sourceFileNames; let i = index" class="row hoverable" routerLink="/survivors">
                 <div class="col">
                     {{file}}
                 </div>
-                <div class="col-md-2" [ngStyle]="setMutationScoreColour(score[i])">
+                <div class="col-md-2" [ngStyle]="getMutationScoreColour(score[i])">
                     {{score[i]}}
                 </div>
                 <div class="col-md-2">

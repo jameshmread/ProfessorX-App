@@ -6,3 +6,7 @@
 .filesNotIncluded {
     background-color: #ffbb33;
 }
+
+hoverable {
+    cursor: pointer;
+   }
