@@ -14,6 +14,8 @@ export class MutationStatsSummaryComponent implements OnInit {
   public survivingMutants: number;
   public totalMutationScore: number;
   public roundedTotalMutationScore: number;
+  public runDuration: Array<number>;
+
   constructor (private resultsService: MutationResultsService, private navService: NavbarSummaryService) {}
 
   public ngOnInit () {
@@ -21,6 +23,8 @@ export class MutationStatsSummaryComponent implements OnInit {
     this.survivingMutants = this.resultsService.getOverallSummary().totalSurvivingMutants;
     this.totalMutationScore = this.resultsService.getOverallSummary().mutationScore;
     this.roundedTotalMutationScore = Math.round(this.totalMutationScore);
+
+    this.runDuration = this.resultsService.getRunDuration();
 
     this.navService.setSummary("Project Mutation Score: " + this.totalMutationScore.toString() + "%");
   }

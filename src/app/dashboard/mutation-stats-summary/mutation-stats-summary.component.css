@@ -847,10 +847,10 @@
   cursor: default;
 }
 .c100:hover > span {
-  width: 3.33em;
+  /* width: 3.33em;
   line-height: 3.33em;
   font-size: 0.3em;
-  color: #307bbb;
+  color: #307bbb; */
 }
 .c100:hover:after {
   top: 0.04em;
@@ -867,7 +867,7 @@
   border-color: #c6ff00 !important;
 }
 .c100.dark > span {
-  color: #777777;
+  color: #ffffff;
 }
 .c100.dark:after {
   background-color: #666666;
@@ -884,12 +884,13 @@
 /*  green bar fill */
 .c100.green.dark .bar, .c100.green.dark .fill {
   border-color: #00C851 !important;
+  background-color: #2f933a !important;  
 }
 .c100.green.dark:hover > span {
   color: #00C851;
 }
 .c100.orange .bar, .c100.orange .fill {
-  border-color: #3b321f !important;
+  border-color: #3b1f1f !important;
 }
 .c100.orange:hover > span {
   color: #ffbb33;
