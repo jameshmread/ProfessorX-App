@@ -3,6 +3,8 @@ import { MutationResultsService } from "../../../services/mutation-results.servi
 import { Filters } from "../../../preProcessors/Filters";
 import { ResultFields } from "../../../../enums/ResultFields";
 import { IndividualMutationService } from "../../../services/individual-mutation.service";
+import { NavLinks } from "../../../../enums/NavLinks";
+import { IndividualMutationComponent } from "../individual-mutation.component";
 
 @Component({
   selector: "app-mutation-filters",

@@ -27,7 +27,7 @@ export class MutatedFilesSummaryComponent implements OnInit {
     this.removeUnmutatedSourceFilesFromList();
   }
 
-  public setMutationScoreColour (score: string) {
+  public getMutationScoreColour (score: string) {
     if (score === null) {return; }
     const scoreNumber: number = Number(score.substring(0, score.length - 1));
     if (scoreNumber >= MutationScoreDivisions.gradeA) {

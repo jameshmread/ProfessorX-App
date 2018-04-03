@@ -1,2 +1,33 @@
-.progress {height: 25px;}
-.progress-bar {height: 25px;}
+.container-flex {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    white-space: nowrap;
+    
+}
+
+.progress {
+    height: 40px;
+}
+
+.progress-bar {
+    height: 40px;
+    font-size: 1vw;
+    font-weight: 400;
+}
+
+@media (max-width: 900px) {
+    .container-flex {
+        white-space: unset;
+        
+    }
+
+    .progress {
+        height: 8vh;
+    }
+
+    .progress-bar {
+        height: 8vh;
+        font-size: 2vh;
+        font-weight: 400;
+    }
+}

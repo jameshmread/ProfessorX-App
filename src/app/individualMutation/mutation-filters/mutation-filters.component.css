@@ -1,8 +1,17 @@
 .select-picker {
       padding: 10px;
-      padding-right: 100px;
       color: black;
       background-color: whitesmoke;
       border-radius: 15px;
       border-width: 3px;
+}
+
+.card-title {
+      text-align: center;
+      font-size: 2vw;
+      align-content: center;
+}
+
+.card-body {
+      text-align: center;
 }

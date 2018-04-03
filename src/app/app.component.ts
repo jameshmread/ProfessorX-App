@@ -10,19 +10,10 @@ import { NavbarTabs } from "../../enums/NavbarTabs";
 })
 export class AppComponent{
 
-  public duration = [];
-  public currentTab = "Dashboard";
-
-  public tabs = NavbarTabs;
-
   constructor (private mResultsService: MutationResultsService) {
     const dataGatherer = new GatherData();
     this.mResultsService.setAllMutationResults(dataGatherer.getResultsArray());
-    this.duration = dataGatherer.getDuration();
     this.mResultsService.setSummaryInfo(dataGatherer.getSummaryFileList(), dataGatherer.getOverallScores());
-  }
-
-  public getCurrentTab (event){
-    this.currentTab = event;
+    this.mResultsService.setRunDuration(dataGatherer.getDuration());
   }
 }

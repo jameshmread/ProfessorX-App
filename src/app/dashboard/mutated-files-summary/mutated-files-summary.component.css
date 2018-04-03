@@ -4,5 +4,11 @@
 }
 
 .filesNotIncluded {
+    font-size: 2vw;
+    color: antiquewhite;
     background-color: #ffbb33;
+}
+
+hoverable {
+    cursor: pointer;
 }

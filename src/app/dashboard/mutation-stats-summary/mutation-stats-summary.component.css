@@ -1,27 +1,16 @@
-.large-text {
-      font-size: 200px
-    }
-
-.panel-head-padding{
-  padding-bottom: 25px;
+.display-1 {
+      font-size: 10vw;
 }
 
-.padding {
-  padding-right: 100px;
-  padding-left: 20px;
-}
-
-.justify-right {
+.duration {
   text-align: right;
+  font-size: 4vw;
+  white-space: nowrap;
+  padding-right: 4vw;
 }
-
-.justify-center {
-  text-align: center
-}
-
 /****************************************************************
  *
- * CSS Percentage Circle
+ * CSS Percentage Circle (Below)
  * Author: Andre Firchow
  *
 *****************************************************************/
@@ -79,7 +68,7 @@
   margin: 0 auto;
 }
 .c100.big {
-  font-size: 240px;
+  font-size: 15vw;
 }
 .c100.small {
   font-size: 80px;
@@ -847,10 +836,10 @@
   cursor: default;
 }
 .c100:hover > span {
-  width: 3.33em;
+  /* width: 3.33em;
   line-height: 3.33em;
   font-size: 0.3em;
-  color: #307bbb;
+  color: #307bbb; */
 }
 .c100:hover:after {
   top: 0.04em;
@@ -867,7 +856,7 @@
   border-color: #c6ff00 !important;
 }
 .c100.dark > span {
-  color: #777777;
+  color: #ffffff;
 }
 .c100.dark:after {
   background-color: #666666;
@@ -884,12 +873,13 @@
 /*  green bar fill */
 .c100.green.dark .bar, .c100.green.dark .fill {
   border-color: #00C851 !important;
+  background-color: #2f933a !important;  
 }
 .c100.green.dark:hover > span {
   color: #00C851;
 }
 .c100.orange .bar, .c100.orange .fill {
-  border-color: #3b321f !important;
+  border-color: #3b1f1f !important;
 }
 .c100.orange:hover > span {
   color: #ffbb33;

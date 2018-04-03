@@ -11,6 +11,7 @@ export class MutationResultsService {
   private testRunnerConfig: IRunnerConfig;
   private summaryFiles: IMutationScoresPerFile;
   private overallScores: ISummary;
+  private runDuration: Array<number>;
 
   constructor () {
 
@@ -27,6 +28,14 @@ export class MutationResultsService {
   public setSummaryInfo (files: IMutationScoresPerFile, overallScores: ISummary) {
     this.summaryFiles = files;
     this.overallScores = overallScores;
+  }
+
+  public setRunDuration (duration: Array<number>) {
+    this.runDuration = duration;
+  }
+
+  public getRunDuration (): Array<number> {
+    return this.runDuration;
   }
 
   public getAllMutationResults (): Array<IMutationResult> {

@@ -2,13 +2,13 @@
   <div class="card text-white bg-primary">
     <div class="row card-body">
       <div class="col">
-        <h3 class="card-title">Filter by File</h3>
+        <div class="card-title">Filter by File</div>
         <select [(ngModel)]="selectedSourceFile" class="select-picker" (change)="setSelectedsourceFile()">
             <option *ngFor="let file of srcFiles" value="{{file}}">{{file}}</option>
           </select>
       </div>
       <div class="col">
-        <h3 class="card-title">Filter by Mutator</h3>
+        <div class="card-title">Filter by Mutator</div>
         <select [(ngModel)]="selectedFilter" class="select-picker" (change)="setSelectedFilterType()">
           <option *ngFor="let filter of filters" value="{{filter}}">{{filter}}</option>
         </select>

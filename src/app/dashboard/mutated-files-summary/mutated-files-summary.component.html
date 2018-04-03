@@ -5,30 +5,30 @@
         </div>
         <div class="card-body">
             <div class="row card-header">
-                <div class="col">
+                <div class="col-md-4">
                         File Name
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md">
                         Mutation Score
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md">
                         Number of Surviving Mutants
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md">
                         Number of Mutations Performed
                     </div>
             </div>
-            <div *ngFor="let file of sourceFileNames; let i = index" class="row">
-                <div class="col">
+            <div *ngFor="let file of sourceFileNames; let i = index" class="row hoverable" routerLink="/survivors">
+                <div class="col-md-4">
                     {{file}}
                 </div>
-                <div class="col-md-2" [ngStyle]="setMutationScoreColour(score[i])">
+                <div class="col-md" [ngStyle]="getMutationScoreColour(score[i])">
                     {{score[i]}}
                 </div>
-                <div class="col-md-2">
+                <div class="col-md">
                     {{survived[i]}}
                 </div>
-                <div class="col-md-2">
+                <div class="col-md">
                     {{total[i]}}
                 </div>
             </div>
@@ -42,7 +42,7 @@
        </div>
        <div class="card-body filesNotIncluded">
            <div class="row card-header">
-                <div class="*ngIf unMutatedSourceFiles.length === 0; someUnMutatedFiles">
+                <div *ngIf="unMutatedSourceFiles.length === 0; someUnMutatedFiles">
                     Great! No Files Were Left Out.
                 </div>
                <ng-template #someUnMutatedFiles class="col">
