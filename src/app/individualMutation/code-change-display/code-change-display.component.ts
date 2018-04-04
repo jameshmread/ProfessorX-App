@@ -18,7 +18,11 @@ export class CodeChangeDisplayComponent implements OnInit {
     public codeDiff: Array<number> = [];
     public filteredMutants: Array<IMutationResult>;
     public currentFilter: IFilterType = {fileName: "All Files", mutationType: "All Mutator Types"};
+
+    public animateDiv = false;
+
     private survivingMutants: Array<IMutationResult>;
+
 
     constructor (
         private resultService: MutationResultsService,
@@ -52,6 +56,7 @@ export class CodeChangeDisplayComponent implements OnInit {
     }
 
     private filterMutants () {
+        this.animateDiv = true;
         const filteredByFile = this.getMutantsFilteredByFile();
 
         const filteredFilesByTypes = this.getMutantsFilteredByType();
@@ -60,6 +65,9 @@ export class CodeChangeDisplayComponent implements OnInit {
         // this.filteredMutants.filter((item, index) => index < 20);
         // Need to sort when filter returns no values
         this.setNavSummary();
+        setTimeout(() => {
+            this.animateDiv = !this.animateDiv;
+        }, 300);
     }
 
     private setNavSummary () {
