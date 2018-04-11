@@ -2,6 +2,12 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
+.sticky-top-element {
+  position: sticky;
+  top: 50px;
+  z-index:1000;
+}
+
 // App start circular loading bar taken from site below 
 // https://medium.com/@tomastrajan/how-to-style-angular-application-loading-with-angular-cli-like-a-boss-cdd4f5358554
 .app-loading {

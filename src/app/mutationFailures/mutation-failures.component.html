@@ -1,4 +1,4 @@
-<div class="container-flex">
+<div class="container">
   <div *ngIf="failures.length > 0; else noFailures">
     <div *ngFor="let failure of failures" class="row jumbotron hoverable">
       <h2 class="card-title">
@@ -12,7 +12,7 @@
             <h5 class="card-title border-bottom">Origional Code</h5>
               <div class="row" *ngFor="let line of failure.origionalCode">
                 <samp>
-                <div class="col">{{line.lineNumber}} {{line.lineText}}</div>
+                <div class="col code">{{line.lineNumber}} {{line.lineText}}</div>
                 </samp>
               </div>
           </div>

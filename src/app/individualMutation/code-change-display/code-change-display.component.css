@@ -13,7 +13,7 @@
 .code-panel {
       background: rgb(238, 234, 234);
       border-radius: 5px;
-      font-size: 1.25vw;
+      font-size: 0.75vw;
       white-space: nowrap;
 }
 
@@ -23,11 +23,29 @@
 
 .card-title {
       text-align: center;
-      font-size: 2vw;
+      font-size: 1.5vw;
       align-content: center;
+      border-radius: 5%;
+}
+
+.type-of-mutation {
+      color: rgb(105, 105, 105);
+      font-weight: 500; 
 }
 
 .noResultsFound {
       font-size: 4vw;
       text-align: center;
+}
+
+.slider {
+      position: relative;
+      top: 0;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+.slider.close {
+      top: 100vh;
+      height: 0;
 }

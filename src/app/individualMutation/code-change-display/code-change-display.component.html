@@ -5,13 +5,14 @@
         </h3>
     </div>
     <div *ngIf="filteredMutants.length > 0; else noResultsFound">
-        <div *ngFor="let survivingMutant of filteredMutants">
-            <div class="jumbotron">
+        <div class="slider" [class.close]="animateDiv" *ngFor="let survivingMutant of filteredMutants">
+            <div class="card card-body">
                 <div class="container-flex">
-                    <h3 class="card-title">Type of Mutation: {{survivingMutant.mutationType}}</h3>
+                    <h3 class="card-title type-of-mutation">Type of Mutation: {{survivingMutant.mutationType}}</h3>
                     <div class="card-body row code-panel">
                         <div class="col">
-                            <div class="" *ngFor="let lines of survivingMutant.origionalCode; let i = index">
+                            <div class="card-title z-depth-1">Code Removed</div>
+                            <div *ngFor="let lines of survivingMutant.origionalCode; let i = index">
                                 <div class="row container">
                                     <div class="col-sm-1 text-align-center">
                                         {{lines.lineNumber}}
@@ -30,6 +31,7 @@
                             </div>
                         </div>
                         <div class="col">
+                            <div class="card-title z-depth-1">Mutation Added</div>
                             <div *ngFor="let lines of survivingMutant.mutatedCode; let i = index">
                                 <div class="row">
                                     <div class="col-sm-1 text-align-center">
