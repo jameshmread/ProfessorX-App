@@ -28,7 +28,7 @@ export class GatherData extends InputOrganiser {
                         srcFilePath: result["SRC_FILE_PATH"],
                         srcFileName: result["SRC_FILE"],
                         testFilePath: result["testFilePath"],
-                        origionalCode: result["origionalCode"],
+                              originalCode: result["originalCode"],
                         mutatedCode: result["mutatedCode"],
                         mutationAttemptFailure: result["mutationAttemptFailure"],
                         mutationType: result["mutationType"],

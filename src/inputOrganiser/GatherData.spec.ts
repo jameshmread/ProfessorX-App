@@ -14,7 +14,7 @@ describe("Gather Data", () => {
             srcFilePath: "./testProject/src/",
             srcFileName: "HelloWorld.ts",
             testFilePath: "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
-            origionalCode: [{lineText: "return a + b;", lineNumber: 2}],
+            originalCode: [{lineText: "return a + b;", lineNumber: 2}],
             mutatedCode: [{lineText: "return a / b;", lineNumber: 2}],
             mutationAttemptFailure: undefined
       };
@@ -25,7 +25,7 @@ describe("Gather Data", () => {
             srcFilePath: "./testProject/src/",
             srcFileName: "HelloWorld.ts",
             testFilePath: undefined,
-            origionalCode: [{lineText: "return a + b;", lineNumber: 1}],
+            originalCode: [{lineText: "return a + b;", lineNumber: 1}],
             mutatedCode: [{lineText: "return a / b;", lineNumber: 1}],
             mutationAttemptFailure: {}
       };
@@ -45,7 +45,7 @@ describe("Gather Data", () => {
 
       it("should not have a null num passed tests element", () => {
             const actual: Array<IMutationResult> = gatherData.getResultsArray();
-            expect(actual[0].origionalCode).not.toBeUndefined();
+            expect(actual[0].originalCode).not.toBeUndefined();
       });
 
       it("should not have a null srcfile path element", () => {
