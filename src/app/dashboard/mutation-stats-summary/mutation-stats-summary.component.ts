@@ -25,7 +25,6 @@ export class MutationStatsSummaryComponent implements OnInit {
     this.roundedTotalMutationScore = Math.round(this.totalMutationScore);
 
     this.runDuration = this.resultsService.getRunDuration();
-
     this.navService.setSummary("Project Mutation Score: " + this.totalMutationScore.toString() + "%");
   }
 }

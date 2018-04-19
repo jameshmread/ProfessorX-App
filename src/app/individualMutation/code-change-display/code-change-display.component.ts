@@ -40,9 +40,9 @@ export class CodeChangeDisplayComponent implements OnInit {
 
     private getDiff () {
         this.survivingMutants.forEach((mutant) => {
-            mutant.origionalCode.forEach((line, index) => {
+            mutant.originalCode.forEach((line, index) => {
                 if (mutant.mutatedCode.indexOf(line) < 0) {
-                    this.codeDiff.push((mutant.origionalCode[index].lineNumber));
+                    this.codeDiff.push((mutant.originalCode[index].lineNumber));
                 }
             });
         });

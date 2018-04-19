@@ -7,260 +7,1423 @@
         "duration": {
             "d": 0,
             "h": 0,
-            "m": 1,
-            "s": 6,
-            "ms": 428
+            "m": 0,
+            "s": 2,
+            "ms": 912
+        },
+        "scoresPerFile": {
+            "files": [
+                "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+                "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts"
+            ],
+            "mutantsSurvivedForEach": [
+                2,
+                10
+            ],
+            "totalMutationsForEach": [
+                31,
+                37
+            ]
+        },
+        "overallScores": {
+            "totalKilledMutants": 56,
+            "totalSurvivingMutants": 12,
+            "mutationScore": 82.35
         }
     },
-    [ 
-      {
-                  "SRC_FILE_PATH": "./testProject/src/",
-                  "SRC_FILE": "HelloWorld.ts",
-                  "mutationAttemptFailure": {
-                    "reasonForFailure": "Could not create source code modifier",
-                    "attemptedMutation": "+ => -",
-                    "nodeToBeMutated": {
-                        "syntaxType": 37,
-                        "positions": {
-                            "pos": 91,
-                            "end": 93
-                        },
-                        "parentFileName": "HelloWorld.ts",
-                        "plainText": "+"
-                    }
-                },
-                  "origionalCode": [
-                    { "lineText": "    public failedMutation () {\r", "lineNumber": 33
-                    },
-                    { "lineText": "        return 1 + 4;\r", "lineNumber": 34
-                    },
-                    { "lineText": "    }\r", "lineNumber": 35
-                    }
-                ],
-                  "mutatedCode": []
-            },
-            {
-                  "SRC_FILE_PATH": "./testProject/src/",
-                  "SRC_FILE": "FileTwo.ts",
-                  "mutationAttemptFailure": {
-                        "reasonForFailure": "Could not create source code modifier",                      
-                        "attemptedMutation": "> => -",
-                        "nodeToBeMutated": {
-                              "syntaxType": 29,
-                              "positions": {
-                                    "pos": 193,
-                                    "end": 195
-                              },
-                              "parentFileName": "FileTwo.ts"
-                        }
-                  },
-                  "origionalCode":[
-                    { "lineText": "    public newFunction () {\r", "lineNumber": 31
-                    },
-                    { "lineText": "if (i % 2 === 0 && 1 > 0){;\r", "lineNumber": 32
-                    },
-                    { "lineText": "return true;\r", "lineNumber": 33
-                    },
-                    { "lineText": "    }\r", "lineNumber": 34
-                    },
-                    { "lineText": "    }\r", "lineNumber": 35
-                    }
-                ],
-                  "mutatedCode": []
-            },
-            {
-                  "SRC_FILE_PATH": "./testProject/src/",
-                  "SRC_FILE": "HelloWorld.ts",
-                  "testFilePath": "./testProject/src/HelloWorld.ts1C1396.spec.m.ts",
-                  "lineNumber": 2,
-                  "origionalCode":  [
-                    { "lineText": "    public newFunction () {\r", "lineNumber": 1
-                    },
-                    { "lineText": "        return true;\r", "lineNumber": 2
-                    },
-                    { "lineText": "    }\r", "lineNumber": 3
-                    }
-                ],
-                  "mutatedCode": [
-                    { "lineText": "    public newFunction () {\r", "lineNumber": 1
-                    },
-                    { "lineText": "        return false;\r", "lineNumber": 2
-                    },
-                    { "lineText": "    }\r", "lineNumber": 3
-                    }
-                ],
-                  "numberOfPassedTests": 3,
-                  "numberOfFailedTests": 1,
-                  "mutantKilled": true
-            },
-            {
-                "origionalCode": [
-                    { "lineText": "\r", "lineNumber": 9
-                    },
-                    { "lineText": "    public takeAway (a: number, b: number) {\r", "lineNumber": 10
-                    },
-                    { "lineText": "        return a - b;\r", "lineNumber": 11
-                    },
-                    { "lineText": "    }\r", "lineNumber": 12
-                    }
-                ],
-                "mutatedCode": [
-                    { "lineText": "\r", "lineNumber": 9
-                    },
-                    { "lineText": "    public takeAway (a: number, b: number) {\r", "lineNumber": 10
-                    },
-                    { "lineText": "        return a - b;\r", "lineNumber": 11
-                    },
-                    { "lineText": "    }\r", "lineNumber": 12
-                    }
-                ],
-                "SRC_FILE_PATH": "./testProject/src/",
-                "SRC_FILE": "HelloWorld.ts",
-                "mutationAttemptFailure": {
-                    "reasonForFailure": "Could not create source code modifier",
-                    "attemptedMutation": "- => /",
-                    "nodeToBeMutated": {
-                        "syntaxType": 38,
-                        "positions": {
-                            "pos": 265,
-                            "end": 267
-                        },
-                        "parentFileName": "HelloWorld.ts",
-                        "plainText": "-"
-                    }
-                },
-                "numberOfPassedTests": 6,
-                "numberOfFailedTests": 1,
-                "mutantKilled": true,
-                "testFilePath": "./testProject/src/HelloWorld.ts4C3520.spec.m.ts"
-            },
-            {
-            "origionalCode": [
-                { "lineText": "    public addNumbers (a: number, b: number) {\r", "lineNumber": 2
-                },
-                { "lineText": "        return a + b;\r", "lineNumber": 3
-                },
-                { "lineText": "    }\r", "lineNumber": 4
-                }
-            ],
-            "mutatedCode": [
-                { "lineText": "    public addNumbers (a: number, b: number) {\r", "lineNumber": 2
-                },
-                { "lineText": "        return a - b;\r", "lineNumber": 3
-                },
-                { "lineText": "    }\r", "lineNumber": 4
-                }
-            ],
+    [
+        {
+            "originalCode": null,
+            "mutatedCode": null,
             "SRC_FILE_PATH": "./testProject/src/",
-            "SRC_FILE": "HelloWorld.ts",
-            "numberOfPassedTests": 7,
-            "numberOfFailedTests": 0,
-            "mutantKilled": false,
-            "testFilePath": "./testProject/src/HelloWorld.ts0C11676.spec.m.ts"
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
         },
         {
-            "origionalCode": [
-                { "lineText": "\r", "lineNumber": 9
-                },
-                { "lineText": "    public takeAway (a: number, b: number) {\r", "lineNumber": 10
-                },
-                { "lineText": "        return a - b;\r", "lineNumber": 11
-                },
-                { "lineText": "    }\r", "lineNumber": 12
-                }
-            ],
-            "mutatedCode": [
-                { "lineText": "\r", "lineNumber": 9
-                },
-                { "lineText": "    public takeAway (a: number, b: number) {\r", "lineNumber": 10
-                },
-                { "lineText": "        return a / b;\r", "lineNumber": 11
-                },
-                { "lineText": "    }\r", "lineNumber": 12
-                }
-            ],
+            "originalCode": null,
+            "mutatedCode": null,
             "SRC_FILE_PATH": "./testProject/src/",
-            "SRC_FILE": "HelloWorld.ts",
-            "numberOfPassedTests": 7,
-            "numberOfFailedTests": 0,
-            "mutantKilled": false,
-            "testFilePath": "./testProject/src/HelloWorld.ts4C11676.spec.m.ts"
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "-",
+            "mutationType": "Replacing one Binary Operator with another"
         },
         {
-            "origionalCode": [
-                { "lineText": "\r", "lineNumber": 9
-                },
-                { "lineText": "    public takeAway (a: number, b: number) {\r", "lineNumber": 10
-                },
-                { "lineText": "        return a - b;\r", "lineNumber": 11
-                },
-                { "lineText": "    }\r", "lineNumber": 12
+            "originalCode": [],
+            "mutatedCode": [],
+            "SRC_FILE_PATH": "../vscode-github-master/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\vscode-github-master\\src\\extension.ts",
+            "targetNode": "||",
+            "mutationType": "Replacing one Logical operator with another",
+            "testFilePath": "C:\\git\\Honors-Project\\vscode-github-master\\test\\extension.test.ts0C2156undefined.m.ts",
+            "mutationAttemptFailure": {
+                "reasonForFailure": "Mutant Errored Due to: Mocha Errored.",
+                "attemptedMutation": "||",
+                "nodeToBeMutated": {
+                    "syntaxType": 54,
+                    "positions": {
+                        "pos": 2127,
+                        "end": 2130
+                    },
+                    "parentFilePath": "C:\\git\\Honors-Project\\vscode-github-master\\src\\extension.ts",
+                    "plainText": "||",
+                    "associatedTestFilePath": "C:\\git\\Honors-Project\\vscode-github-master\\test\\extension.test.ts"
                 }
-            ],
-            "mutatedCode": [
-                { "lineText": "\r", "lineNumber": 9
-                },
-                { "lineText": "    public takeAway (a: number, b: number) { return null\r", "lineNumber": 10
-                },
-                { "lineText": "    }\r", "lineNumber": 11
-                },
-                { "lineText": "\r", "lineNumber": 12
-                }
-            ],
-            "SRC_FILE_PATH": "./testProject/src/",
-            "SRC_FILE": "HelloWorld.ts",
-            "numberOfPassedTests": 6,
-            "numberOfFailedTests": 1,
-            "mutantKilled": true,
-            "testFilePath": "./testProject/src/HelloWorld.ts8C11676.spec.m.ts"
+            }
         },
         {
-            "origionalCode": [
-                { "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r", "lineNumber": 2
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
                 },
-                { "lineText": "        const numbers = [];\r", "lineNumber": 3
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
                 },
-                { "lineText": "        for (let i = 0; i < limit + 1; i++) {\r", "lineNumber": 4
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
                 },
-                { "lineText": "            if (i % 2 === 0 && 1 > 0){\r", "lineNumber": 5
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
                 },
-                { "lineText": "                numbers.push(i);\r", "lineNumber": 6
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
                 },
-                { "lineText": "            }\r", "lineNumber": 7
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
                 },
-                { "lineText": "        }\r", "lineNumber": 8
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
                 },
-                { "lineText": "        return numbers;\r", "lineNumber": 9
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
                 },
-                { "lineText": "    }\r", "lineNumber": 10
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
                 }
             ],
             "mutatedCode": [
-                        { "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r", "lineNumber": 2
-                        },
-                        { "lineText": "        const numbers = [];\r", "lineNumber": 3
-                        },
-                        { "lineText": "        for (let i = 0; i < limit + 1; i++) {\r", "lineNumber": 4
-                        },
-                        { "lineText": "            if (i % 2 === 0 && 1 >= 0){\r", "lineNumber": 5
-                        },
-                        { "lineText": "                numbers.push(i);\r", "lineNumber": 6
-                        },
-                        { "lineText": "            }\r", "lineNumber": 7
-                        },
-                        { "lineText": "        }\r", "lineNumber": 8
-                        },
-                        { "lineText": "        return numbers;\r", "lineNumber": 9
-                        },
-                        { "lineText": "    }\r", "lineNumber": 10
-                        }
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 >= 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
             ],
             "SRC_FILE_PATH": "./testProject/src/",
-            "SRC_FILE": "FileTwo.ts",
-            "numberOfPassedTests": 1,
-            "numberOfFailedTests": 0,
-            "mutantKilled": false,
-            "testFilePath": "./testProject/src/FileTwo.ts12C11676.spec.m.ts"
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": ">",
+            "mutationType": "Replacing one Binary Operator with another",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts8C3204undefined.m.ts"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": ">",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % -2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "2",
+            "mutationType": "Modification of Numeric Literal",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts16C3204undefined.m.ts"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "100",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "100",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "%",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "%",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "1",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "*",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "*",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = -1; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "0",
+            "mutationType": "Modification of Numeric Literal",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts13C6876undefined.m.ts"
+        }
+    ],
+    [
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "-",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 !== 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": ">",
+            "mutationType": "Replacing one Binary Operator with another",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts9C3204undefined.m.ts"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 / 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": ">",
+            "mutationType": "Replacing one Binary Operator with another",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts13C3204undefined.m.ts"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "2",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "100",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "%",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "%",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "%",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "0",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "*",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "*",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 2 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "1",
+            "mutationType": "Modification of Numeric Literal",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts14C6876undefined.m.ts"
+        }
+    ],
+    [
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": ">",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 - 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": ">",
+            "mutationType": "Replacing one Binary Operator with another",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts10C3204undefined.m.ts"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "2",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "2",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "\r",
+                    "lineNumber": 13
+                },
+                {
+                    "lineText": "    public truth () {\r",
+                    "lineNumber": 14
+                },
+                {
+                    "lineText": "        return true;\r",
+                    "lineNumber": 15
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 16
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "\r",
+                    "lineNumber": 13
+                },
+                {
+                    "lineText": "    public truth () {\r",
+                    "lineNumber": 14
+                },
+                {
+                    "lineText": "        return false;\r",
+                    "lineNumber": 15
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 16
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "true",
+            "mutationType": "Inverting a Boolean",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.spec.ts3C9060undefined.m.ts"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "100",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "%",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "%",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "0",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 2; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "1",
+            "mutationType": "Modification of Numeric Literal",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts6C2744undefined.m.ts"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > -1){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "0",
+            "mutationType": "Modification of Numeric Literal",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts10C2744undefined.m.ts"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "*",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "*",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "\r",
+                    "lineNumber": 25
+                },
+                {
+                    "lineText": "    public percentage (b: number, c: number) {\r",
+                    "lineNumber": 26
+                },
+                {
+                    "lineText": "        return (b / c) * 100;\r",
+                    "lineNumber": 27
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 28
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "\r",
+                    "lineNumber": 25
+                },
+                {
+                    "lineText": "    public percentage (b: number, c: number) {\r",
+                    "lineNumber": 26
+                },
+                {
+                    "lineText": "        return b / c * 100;\r",
+                    "lineNumber": 27
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 28
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "(b / c)",
+            "mutationType": "Removal of Parenthesis in a statement",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.spec.ts11C6876undefined.m.ts"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "1",
+            "mutationType": "Modification of Numeric Literal"
+        }
+    ],
+    [
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "-",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": ">",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 > 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "mutatedCode": [
+                {
+                    "lineText": "    public getEvenNumbers (limit: number): Array <number> {\r",
+                    "lineNumber": 2
+                },
+                {
+                    "lineText": "        const numbers = [];\r",
+                    "lineNumber": 3
+                },
+                {
+                    "lineText": "        for (let i = 0; i < limit + 1; i++) {\r",
+                    "lineNumber": 4
+                },
+                {
+                    "lineText": "            if (i % 2 === 0 && 1 + 0){\r",
+                    "lineNumber": 5
+                },
+                {
+                    "lineText": "                numbers.push(i);\r",
+                    "lineNumber": 6
+                },
+                {
+                    "lineText": "            }\r",
+                    "lineNumber": 7
+                },
+                {
+                    "lineText": "        }\r",
+                    "lineNumber": 8
+                },
+                {
+                    "lineText": "        return numbers;\r",
+                    "lineNumber": 9
+                },
+                {
+                    "lineText": "    }\r",
+                    "lineNumber": 10
+                }
+            ],
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": ">",
+            "mutationType": "Replacing one Binary Operator with another",
+            "testFilePath": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.spec.ts11C3204undefined.m.ts"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "2",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "100",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "100",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "%",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "%",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "0",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "1",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "+",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "*",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\HelloWorld.ts",
+            "targetNode": "*",
+            "mutationType": "Replacing one Binary Operator with another"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "0",
+            "mutationType": "Modification of Numeric Literal"
+        },
+        {
+            "originalCode": null,
+            "mutatedCode": null,
+            "SRC_FILE_PATH": "./testProject/src/",
+            "SRC_FILE": "C:\\git\\Honors-Project\\ProfessorX\\testProject\\src\\FileTwo.ts",
+            "targetNode": "1",
+            "mutationType": "Modification of Numeric Literal"
         }
     ]
 ]
