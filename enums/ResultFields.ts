@@ -3,7 +3,7 @@ export enum ResultFields {
     srcFileName = "srcFileName",
     testFilePath= "testFilePath",
     lineNumber= "lineNumber",
-    origionalCode= "origionalCode",
+    originalCode= "originalCode",
     mutatedCode= "mutatedCode",
     numPassedTests= "numPassedTests",
     numFailedTests= "numFailedTests",
